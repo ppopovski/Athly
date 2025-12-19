@@ -1,0 +1,1218 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5673E91D2EE1F8FC00688250 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E91C2EE1F8FC00688250 /* RegisterView.swift */; };
+		5673E91E2EE1F8FC00688250 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E91C2EE1F8FC00688250 /* RegisterView.swift */; };
+		5673E91F2EE1F8FC00688250 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E91C2EE1F8FC00688250 /* RegisterView.swift */; };
+		5673E9222EE2401B00688250 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9212EE2401B00688250 /* NavigationCoordinator.swift */; };
+		5673E9232EE2401B00688250 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9212EE2401B00688250 /* NavigationCoordinator.swift */; };
+		5673E9242EE2401B00688250 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9212EE2401B00688250 /* NavigationCoordinator.swift */; };
+		5673E92A2EE2481B00688250 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9292EE2481B00688250 /* CalendarView.swift */; };
+		5673E92B2EE2481B00688250 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9292EE2481B00688250 /* CalendarView.swift */; };
+		5673E92C2EE2481B00688250 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9292EE2481B00688250 /* CalendarView.swift */; };
+		5673E92E2EE2482300688250 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E92D2EE2482300688250 /* SettingsView.swift */; };
+		5673E92F2EE2482300688250 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E92D2EE2482300688250 /* SettingsView.swift */; };
+		5673E9302EE2482300688250 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E92D2EE2482300688250 /* SettingsView.swift */; };
+		5673E9342EE24C6A00688250 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9332EE24C6A00688250 /* SettingsRow.swift */; };
+		5673E9352EE24C6A00688250 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9332EE24C6A00688250 /* SettingsRow.swift */; };
+		5673E9362EE24C6A00688250 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9332EE24C6A00688250 /* SettingsRow.swift */; };
+		5673E93A2EE24CA100688250 /* WorkoutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9382EE24CA100688250 /* WorkoutCard.swift */; };
+		5673E93B2EE24CA100688250 /* QuickActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9372EE24CA100688250 /* QuickActionButton.swift */; };
+		5673E93C2EE24CA100688250 /* WorkoutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9382EE24CA100688250 /* WorkoutCard.swift */; };
+		5673E93D2EE24CA100688250 /* QuickActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9372EE24CA100688250 /* QuickActionButton.swift */; };
+		5673E93E2EE24CA100688250 /* WorkoutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9382EE24CA100688250 /* WorkoutCard.swift */; };
+		5673E93F2EE24CA100688250 /* QuickActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9372EE24CA100688250 /* QuickActionButton.swift */; };
+		5673E9422EE24CD500688250 /* CalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9402EE24CD500688250 /* CalendarDayView.swift */; };
+		5673E9432EE24CD500688250 /* CalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9402EE24CD500688250 /* CalendarDayView.swift */; };
+		5673E9442EE24CD500688250 /* CalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9402EE24CD500688250 /* CalendarDayView.swift */; };
+		5673E94E2EE24F8300688250 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9472EE24F8300688250 /* ChangePasswordView.swift */; };
+		5673E94F2EE24F8300688250 /* NotificationsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9492EE24F8300688250 /* NotificationsSettingsView.swift */; };
+		5673E9502EE24F8300688250 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9462EE24F8300688250 /* AboutView.swift */; };
+		5673E9512EE24F8300688250 /* UnitsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E94C2EE24F8300688250 /* UnitsSettingsView.swift */; };
+		5673E9522EE24F8300688250 /* EmailSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9482EE24F8300688250 /* EmailSettingsView.swift */; };
+		5673E9532EE24F8300688250 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E94A2EE24F8300688250 /* PrivacyPolicyView.swift */; };
+		5673E9542EE24F8300688250 /* TermsOfServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E94B2EE24F8300688250 /* TermsOfServiceView.swift */; };
+		5673E9552EE24F8300688250 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9472EE24F8300688250 /* ChangePasswordView.swift */; };
+		5673E9562EE24F8300688250 /* NotificationsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9492EE24F8300688250 /* NotificationsSettingsView.swift */; };
+		5673E9572EE24F8300688250 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9462EE24F8300688250 /* AboutView.swift */; };
+		5673E9582EE24F8300688250 /* UnitsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E94C2EE24F8300688250 /* UnitsSettingsView.swift */; };
+		5673E9592EE24F8300688250 /* EmailSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9482EE24F8300688250 /* EmailSettingsView.swift */; };
+		5673E95A2EE24F8300688250 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E94A2EE24F8300688250 /* PrivacyPolicyView.swift */; };
+		5673E95B2EE24F8300688250 /* TermsOfServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E94B2EE24F8300688250 /* TermsOfServiceView.swift */; };
+		5673E95C2EE24F8300688250 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9472EE24F8300688250 /* ChangePasswordView.swift */; };
+		5673E95D2EE24F8300688250 /* NotificationsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9492EE24F8300688250 /* NotificationsSettingsView.swift */; };
+		5673E95E2EE24F8300688250 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9462EE24F8300688250 /* AboutView.swift */; };
+		5673E95F2EE24F8300688250 /* UnitsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E94C2EE24F8300688250 /* UnitsSettingsView.swift */; };
+		5673E9602EE24F8300688250 /* EmailSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9482EE24F8300688250 /* EmailSettingsView.swift */; };
+		5673E9612EE24F8300688250 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E94A2EE24F8300688250 /* PrivacyPolicyView.swift */; };
+		5673E9622EE24F8300688250 /* TermsOfServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E94B2EE24F8300688250 /* TermsOfServiceView.swift */; };
+		5673E96A2EE2529B00688250 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9632EE2529B00688250 /* CalendarViewModel.swift */; };
+		5673E96B2EE2529B00688250 /* NotificationsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9672EE2529B00688250 /* NotificationsSettingsViewModel.swift */; };
+		5673E96C2EE2529B00688250 /* EmailSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9652EE2529B00688250 /* EmailSettingsViewModel.swift */; };
+		5673E96D2EE2529B00688250 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9662EE2529B00688250 /* HomeViewModel.swift */; };
+		5673E96E2EE2529B00688250 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9642EE2529B00688250 /* ChangePasswordViewModel.swift */; };
+		5673E96F2EE2529B00688250 /* UnitsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9682EE2529B00688250 /* UnitsSettingsViewModel.swift */; };
+		5673E9702EE2529B00688250 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9632EE2529B00688250 /* CalendarViewModel.swift */; };
+		5673E9712EE2529B00688250 /* NotificationsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9672EE2529B00688250 /* NotificationsSettingsViewModel.swift */; };
+		5673E9722EE2529B00688250 /* EmailSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9652EE2529B00688250 /* EmailSettingsViewModel.swift */; };
+		5673E9732EE2529B00688250 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9662EE2529B00688250 /* HomeViewModel.swift */; };
+		5673E9742EE2529B00688250 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9642EE2529B00688250 /* ChangePasswordViewModel.swift */; };
+		5673E9752EE2529B00688250 /* UnitsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9682EE2529B00688250 /* UnitsSettingsViewModel.swift */; };
+		5673E9762EE2529B00688250 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9632EE2529B00688250 /* CalendarViewModel.swift */; };
+		5673E9772EE2529B00688250 /* NotificationsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9672EE2529B00688250 /* NotificationsSettingsViewModel.swift */; };
+		5673E9782EE2529B00688250 /* EmailSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9652EE2529B00688250 /* EmailSettingsViewModel.swift */; };
+		5673E9792EE2529B00688250 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9662EE2529B00688250 /* HomeViewModel.swift */; };
+		5673E97A2EE2529B00688250 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9642EE2529B00688250 /* ChangePasswordViewModel.swift */; };
+		5673E97B2EE2529B00688250 /* UnitsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E9682EE2529B00688250 /* UnitsSettingsViewModel.swift */; };
+		5673E97D2EE257A800688250 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E97C2EE257A800688250 /* CustomTabBar.swift */; };
+		5673E97E2EE257A800688250 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E97C2EE257A800688250 /* CustomTabBar.swift */; };
+		5673E97F2EE257A800688250 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673E97C2EE257A800688250 /* CustomTabBar.swift */; };
+		56A8882C2EEA2332007E31A8 /* ModelsWorkoutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8882B2EEA2332007E31A8 /* ModelsWorkoutModels.swift */; };
+		56A8882D2EEA2332007E31A8 /* ModelsWorkoutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8882B2EEA2332007E31A8 /* ModelsWorkoutModels.swift */; };
+		56A8882E2EEA2332007E31A8 /* ModelsWorkoutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8882B2EEA2332007E31A8 /* ModelsWorkoutModels.swift */; };
+		56A888302EEA233A007E31A8 /* AddWorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8882F2EEA233A007E31A8 /* AddWorkoutViewModel.swift */; };
+		56A888312EEA233A007E31A8 /* AddWorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8882F2EEA233A007E31A8 /* AddWorkoutViewModel.swift */; };
+		56A888322EEA233A007E31A8 /* AddWorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8882F2EEA233A007E31A8 /* AddWorkoutViewModel.swift */; };
+		56A888342EEA2344007E31A8 /* AllWorkoutsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A888332EEA2344007E31A8 /* AllWorkoutsViewModel.swift */; };
+		56A888352EEA2344007E31A8 /* AllWorkoutsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A888332EEA2344007E31A8 /* AllWorkoutsViewModel.swift */; };
+		56A888362EEA2344007E31A8 /* AllWorkoutsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A888332EEA2344007E31A8 /* AllWorkoutsViewModel.swift */; };
+		56A888382EEA2351007E31A8 /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A888372EEA2351007E31A8 /* ProgressViewModel.swift */; };
+		56A888392EEA2351007E31A8 /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A888372EEA2351007E31A8 /* ProgressViewModel.swift */; };
+		56A8883A2EEA2351007E31A8 /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A888372EEA2351007E31A8 /* ProgressViewModel.swift */; };
+		56A888402EEA237A007E31A8 /* AllWorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8883F2EEA237A007E31A8 /* AllWorkoutsView.swift */; };
+		56A888412EEA237A007E31A8 /* AllWorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8883F2EEA237A007E31A8 /* AllWorkoutsView.swift */; };
+		56A888422EEA237A007E31A8 /* AllWorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8883F2EEA237A007E31A8 /* AllWorkoutsView.swift */; };
+		56A888442EEA238D007E31A8 /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A888432EEA238D007E31A8 /* WorkoutDetailView.swift */; };
+		56A888452EEA238D007E31A8 /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A888432EEA238D007E31A8 /* WorkoutDetailView.swift */; };
+		56A888462EEA238D007E31A8 /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A888432EEA238D007E31A8 /* WorkoutDetailView.swift */; };
+		56A888482EEA23A6007E31A8 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A888472EEA23A6007E31A8 /* ProgressView.swift */; };
+		56A888492EEA23A6007E31A8 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A888472EEA23A6007E31A8 /* ProgressView.swift */; };
+		56A8884A2EEA23A6007E31A8 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A888472EEA23A6007E31A8 /* ProgressView.swift */; };
+		56A8884C2EEA23CE007E31A8 /* WorkoutComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8884B2EEA23CE007E31A8 /* WorkoutComponents.swift */; };
+		56A8884D2EEA23CE007E31A8 /* WorkoutComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8884B2EEA23CE007E31A8 /* WorkoutComponents.swift */; };
+		56A8884E2EEA23CE007E31A8 /* WorkoutComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8884B2EEA23CE007E31A8 /* WorkoutComponents.swift */; };
+		56A888502EEA23E1007E31A8 /* ProgressComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8884F2EEA23E1007E31A8 /* ProgressComponents.swift */; };
+		56A888512EEA23E1007E31A8 /* ProgressComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8884F2EEA23E1007E31A8 /* ProgressComponents.swift */; };
+		56A888522EEA23E1007E31A8 /* ProgressComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8884F2EEA23E1007E31A8 /* ProgressComponents.swift */; };
+		56A8885A2EEA26C8007E31A8 /* AddWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A888592EEA26C8007E31A8 /* AddWorkoutView.swift */; };
+		56A8885B2EEA26C8007E31A8 /* AddWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A888592EEA26C8007E31A8 /* AddWorkoutView.swift */; };
+		56A8885C2EEA26C8007E31A8 /* AddWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A888592EEA26C8007E31A8 /* AddWorkoutView.swift */; };
+		56CCA4DD2E2FD997000DDE9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CCA4D92E2FD997000DDE9A /* Assets.xcassets */; };
+		56CCA4DE2E2FD997000DDE9A /* AthlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4DA2E2FD997000DDE9A /* AthlyApp.swift */; };
+		56CCA4E12E2FD9CD000DDE9A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4E02E2FD9CD000DDE9A /* WelcomeView.swift */; };
+		56CCA4E32E2FD9EA000DDE9A /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4E22E2FD9EA000DDE9A /* SplashView.swift */; };
+		56CCA4EB2E2FDA92000DDE9A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4EA2E2FDA92000DDE9A /* RegisterViewModel.swift */; };
+		56CCA4EE2E2FDABF000DDE9A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4ED2E2FDABF000DDE9A /* LoginView.swift */; };
+		56CCA4F02E2FDAE1000DDE9A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4EF2E2FDAE1000DDE9A /* LoginViewModel.swift */; };
+		56CCA4F62E2FDBB0000DDE9A /* AthlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4DA2E2FD997000DDE9A /* AthlyApp.swift */; };
+		56CCA4F72E2FDBB0000DDE9A /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4E22E2FD9EA000DDE9A /* SplashView.swift */; };
+		56CCA4F82E2FDBB0000DDE9A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4EA2E2FDA92000DDE9A /* RegisterViewModel.swift */; };
+		56CCA4F92E2FDBB0000DDE9A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4E02E2FD9CD000DDE9A /* WelcomeView.swift */; };
+		56CCA4FA2E2FDBB0000DDE9A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4EF2E2FDAE1000DDE9A /* LoginViewModel.swift */; };
+		56CCA4FD2E2FDBB0000DDE9A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4ED2E2FDABF000DDE9A /* LoginView.swift */; };
+		56CCA5022E2FDBB0000DDE9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CCA4D92E2FD997000DDE9A /* Assets.xcassets */; };
+		56CCA5092E2FDBB2000DDE9A /* AthlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4DA2E2FD997000DDE9A /* AthlyApp.swift */; };
+		56CCA50A2E2FDBB2000DDE9A /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4E22E2FD9EA000DDE9A /* SplashView.swift */; };
+		56CCA50B2E2FDBB2000DDE9A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4EA2E2FDA92000DDE9A /* RegisterViewModel.swift */; };
+		56CCA50C2E2FDBB2000DDE9A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4E02E2FD9CD000DDE9A /* WelcomeView.swift */; };
+		56CCA50D2E2FDBB2000DDE9A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4EF2E2FDAE1000DDE9A /* LoginViewModel.swift */; };
+		56CCA5102E2FDBB2000DDE9A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA4ED2E2FDABF000DDE9A /* LoginView.swift */; };
+		56CCA5152E2FDBB2000DDE9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CCA4D92E2FD997000DDE9A /* Assets.xcassets */; };
+		56CCA51B2E2FE065000DDE9A /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA51A2E2FE065000DDE9A /* ForgotPasswordViewModel.swift */; };
+		56CCA51C2E2FE065000DDE9A /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA51A2E2FE065000DDE9A /* ForgotPasswordViewModel.swift */; };
+		56CCA51D2E2FE065000DDE9A /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA51A2E2FE065000DDE9A /* ForgotPasswordViewModel.swift */; };
+		56CCA51F2E2FE081000DDE9A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA51E2E2FE081000DDE9A /* ForgotPasswordView.swift */; };
+		56CCA5202E2FE081000DDE9A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA51E2E2FE081000DDE9A /* ForgotPasswordView.swift */; };
+		56CCA5212E2FE081000DDE9A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA51E2E2FE081000DDE9A /* ForgotPasswordView.swift */; };
+		56CCA5232E2FE091000DDE9A /* VerificationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5222E2FE091000DDE9A /* VerificationCodeView.swift */; };
+		56CCA5242E2FE091000DDE9A /* VerificationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5222E2FE091000DDE9A /* VerificationCodeView.swift */; };
+		56CCA5252E2FE091000DDE9A /* VerificationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5222E2FE091000DDE9A /* VerificationCodeView.swift */; };
+		56CCA5272E2FE0A1000DDE9A /* NewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5262E2FE0A1000DDE9A /* NewPasswordView.swift */; };
+		56CCA5282E2FE0A1000DDE9A /* NewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5262E2FE0A1000DDE9A /* NewPasswordView.swift */; };
+		56CCA5292E2FE0A1000DDE9A /* NewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5262E2FE0A1000DDE9A /* NewPasswordView.swift */; };
+		56CCA52F2E2FE0C4000DDE9A /* PasswordChangedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA52E2E2FE0C4000DDE9A /* PasswordChangedView.swift */; };
+		56CCA5302E2FE0C4000DDE9A /* PasswordChangedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA52E2E2FE0C4000DDE9A /* PasswordChangedView.swift */; };
+		56CCA5312E2FE0C4000DDE9A /* PasswordChangedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA52E2E2FE0C4000DDE9A /* PasswordChangedView.swift */; };
+		56CCA5522E2FE1D7000DDE9A /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5512E2FE1D7000DDE9A /* AuthenticatedView.swift */; };
+		56CCA5532E2FE1D7000DDE9A /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5512E2FE1D7000DDE9A /* AuthenticatedView.swift */; };
+		56CCA5542E2FE1D7000DDE9A /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5512E2FE1D7000DDE9A /* AuthenticatedView.swift */; };
+		56CCA5562E2FE1E6000DDE9A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5552E2FE1E6000DDE9A /* HomeView.swift */; };
+		56CCA5572E2FE1E6000DDE9A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5552E2FE1E6000DDE9A /* HomeView.swift */; };
+		56CCA5582E2FE1E6000DDE9A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5552E2FE1E6000DDE9A /* HomeView.swift */; };
+		56CCA5602E2FE228000DDE9A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA55F2E2FE228000DDE9A /* CustomButton.swift */; };
+		56CCA5612E2FE228000DDE9A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA55F2E2FE228000DDE9A /* CustomButton.swift */; };
+		56CCA5622E2FE228000DDE9A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA55F2E2FE228000DDE9A /* CustomButton.swift */; };
+		56CCA56C2E2FE2DE000DDE9A /* CustomConfirmationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA56B2E2FE2DE000DDE9A /* CustomConfirmationCodeView.swift */; };
+		56CCA56D2E2FE2DE000DDE9A /* CustomConfirmationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA56B2E2FE2DE000DDE9A /* CustomConfirmationCodeView.swift */; };
+		56CCA56E2E2FE2DE000DDE9A /* CustomConfirmationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA56B2E2FE2DE000DDE9A /* CustomConfirmationCodeView.swift */; };
+		56CCA5862E2FE386000DDE9A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5852E2FE386000DDE9A /* CustomTextField.swift */; };
+		56CCA5872E2FE386000DDE9A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5852E2FE386000DDE9A /* CustomTextField.swift */; };
+		56CCA5882E2FE386000DDE9A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5852E2FE386000DDE9A /* CustomTextField.swift */; };
+		56CCA58A2E2FE3AC000DDE9A /* CustomTextInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5892E2FE3AC000DDE9A /* CustomTextInputValidator.swift */; };
+		56CCA58B2E2FE3AC000DDE9A /* CustomTextInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5892E2FE3AC000DDE9A /* CustomTextInputValidator.swift */; };
+		56CCA58C2E2FE3AC000DDE9A /* CustomTextInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5892E2FE3AC000DDE9A /* CustomTextInputValidator.swift */; };
+		56CCA58E2E2FE3C9000DDE9A /* CustomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA58D2E2FE3C9000DDE9A /* CustomSheet.swift */; };
+		56CCA58F2E2FE3C9000DDE9A /* CustomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA58D2E2FE3C9000DDE9A /* CustomSheet.swift */; };
+		56CCA5902E2FE3C9000DDE9A /* CustomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA58D2E2FE3C9000DDE9A /* CustomSheet.swift */; };
+		56CCA5922E2FE404000DDE9A /* NoInternetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5912E2FE404000DDE9A /* NoInternetView.swift */; };
+		56CCA5932E2FE404000DDE9A /* NoInternetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5912E2FE404000DDE9A /* NoInternetView.swift */; };
+		56CCA5942E2FE404000DDE9A /* NoInternetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5912E2FE404000DDE9A /* NoInternetView.swift */; };
+		56CCA5972E2FE53A000DDE9A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5962E2FE53A000DDE9A /* Extensions.swift */; };
+		56CCA5982E2FE53A000DDE9A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5962E2FE53A000DDE9A /* Extensions.swift */; };
+		56CCA5992E2FE53A000DDE9A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5962E2FE53A000DDE9A /* Extensions.swift */; };
+		56CCA59B2E2FE555000DDE9A /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA59A2E2FE555000DDE9A /* Array+.swift */; };
+		56CCA59C2E2FE555000DDE9A /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA59A2E2FE555000DDE9A /* Array+.swift */; };
+		56CCA59D2E2FE555000DDE9A /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA59A2E2FE555000DDE9A /* Array+.swift */; };
+		56CCA59F2E2FE564000DDE9A /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA59E2E2FE564000DDE9A /* Bundle+.swift */; };
+		56CCA5A02E2FE564000DDE9A /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA59E2E2FE564000DDE9A /* Bundle+.swift */; };
+		56CCA5A12E2FE564000DDE9A /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA59E2E2FE564000DDE9A /* Bundle+.swift */; };
+		56CCA5A32E2FE57A000DDE9A /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5A22E2FE57A000DDE9A /* Color+.swift */; };
+		56CCA5A42E2FE57A000DDE9A /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5A22E2FE57A000DDE9A /* Color+.swift */; };
+		56CCA5A52E2FE57A000DDE9A /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5A22E2FE57A000DDE9A /* Color+.swift */; };
+		56CCA5A72E2FE591000DDE9A /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5A62E2FE591000DDE9A /* Font+.swift */; };
+		56CCA5A82E2FE591000DDE9A /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5A62E2FE591000DDE9A /* Font+.swift */; };
+		56CCA5A92E2FE591000DDE9A /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5A62E2FE591000DDE9A /* Font+.swift */; };
+		56CCA5AB2E2FE5A3000DDE9A /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5AA2E2FE5A3000DDE9A /* Int+.swift */; };
+		56CCA5AC2E2FE5A3000DDE9A /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5AA2E2FE5A3000DDE9A /* Int+.swift */; };
+		56CCA5AD2E2FE5A3000DDE9A /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5AA2E2FE5A3000DDE9A /* Int+.swift */; };
+		56CCA5AF2E2FE5B9000DDE9A /* NavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5AE2E2FE5B9000DDE9A /* NavigationController+.swift */; };
+		56CCA5B02E2FE5B9000DDE9A /* NavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5AE2E2FE5B9000DDE9A /* NavigationController+.swift */; };
+		56CCA5B12E2FE5B9000DDE9A /* NavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5AE2E2FE5B9000DDE9A /* NavigationController+.swift */; };
+		56CCA5B32E2FE5C7000DDE9A /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5B22E2FE5C6000DDE9A /* String+.swift */; };
+		56CCA5B42E2FE5C7000DDE9A /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5B22E2FE5C6000DDE9A /* String+.swift */; };
+		56CCA5B52E2FE5C7000DDE9A /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5B22E2FE5C6000DDE9A /* String+.swift */; };
+		56CCA5B72E2FE5D7000DDE9A /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5B62E2FE5D7000DDE9A /* View+.swift */; };
+		56CCA5B82E2FE5D7000DDE9A /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5B62E2FE5D7000DDE9A /* View+.swift */; };
+		56CCA5B92E2FE5D7000DDE9A /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5B62E2FE5D7000DDE9A /* View+.swift */; };
+		56CCA5BC2E2FE5F4000DDE9A /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5BB2E2FE5F4000DDE9A /* AuthManager.swift */; };
+		56CCA5BD2E2FE5F4000DDE9A /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5BB2E2FE5F4000DDE9A /* AuthManager.swift */; };
+		56CCA5BE2E2FE5F4000DDE9A /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5BB2E2FE5F4000DDE9A /* AuthManager.swift */; };
+		56CCA5C42E2FE616000DDE9A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5C32E2FE616000DDE9A /* KeychainHelper.swift */; };
+		56CCA5C52E2FE616000DDE9A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5C32E2FE616000DDE9A /* KeychainHelper.swift */; };
+		56CCA5C62E2FE616000DDE9A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5C32E2FE616000DDE9A /* KeychainHelper.swift */; };
+		56CCA5C82E2FE625000DDE9A /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5C72E2FE625000DDE9A /* NetworkMonitor.swift */; };
+		56CCA5C92E2FE625000DDE9A /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5C72E2FE625000DDE9A /* NetworkMonitor.swift */; };
+		56CCA5CA2E2FE625000DDE9A /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5C72E2FE625000DDE9A /* NetworkMonitor.swift */; };
+		56CCA5CD2E2FE643000DDE9A /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5CC2E2FE643000DDE9A /* ApiClient.swift */; };
+		56CCA5CE2E2FE643000DDE9A /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5CC2E2FE643000DDE9A /* ApiClient.swift */; };
+		56CCA5CF2E2FE643000DDE9A /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5CC2E2FE643000DDE9A /* ApiClient.swift */; };
+		56CCA5D12E2FE670000DDE9A /* ProjectConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5D02E2FE670000DDE9A /* ProjectConstants.swift */; };
+		56CCA5D22E2FE670000DDE9A /* ProjectConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5D02E2FE670000DDE9A /* ProjectConstants.swift */; };
+		56CCA5D32E2FE670000DDE9A /* ProjectConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCA5D02E2FE670000DDE9A /* ProjectConstants.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5673E91C2EE1F8FC00688250 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		5673E9202EE20DEC00688250 /* Athly---Development-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Athly---Development-Info.plist"; sourceTree = "<group>"; };
+		5673E9212EE2401B00688250 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
+		5673E9292EE2481B00688250 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		5673E92D2EE2482300688250 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5673E9332EE24C6A00688250 /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
+		5673E9372EE24CA100688250 /* QuickActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionButton.swift; sourceTree = "<group>"; };
+		5673E9382EE24CA100688250 /* WorkoutCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCard.swift; sourceTree = "<group>"; };
+		5673E9402EE24CD500688250 /* CalendarDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayView.swift; sourceTree = "<group>"; };
+		5673E9462EE24F8300688250 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		5673E9472EE24F8300688250 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		5673E9482EE24F8300688250 /* EmailSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSettingsView.swift; sourceTree = "<group>"; };
+		5673E9492EE24F8300688250 /* NotificationsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsView.swift; sourceTree = "<group>"; };
+		5673E94A2EE24F8300688250 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		5673E94B2EE24F8300688250 /* TermsOfServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceView.swift; sourceTree = "<group>"; };
+		5673E94C2EE24F8300688250 /* UnitsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsSettingsView.swift; sourceTree = "<group>"; };
+		5673E9632EE2529B00688250 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		5673E9642EE2529B00688250 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		5673E9652EE2529B00688250 /* EmailSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSettingsViewModel.swift; sourceTree = "<group>"; };
+		5673E9662EE2529B00688250 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		5673E9672EE2529B00688250 /* NotificationsSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsViewModel.swift; sourceTree = "<group>"; };
+		5673E9682EE2529B00688250 /* UnitsSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsSettingsViewModel.swift; sourceTree = "<group>"; };
+		5673E97C2EE257A800688250 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		56A8882B2EEA2332007E31A8 /* ModelsWorkoutModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsWorkoutModels.swift; sourceTree = "<group>"; };
+		56A8882F2EEA233A007E31A8 /* AddWorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutViewModel.swift; sourceTree = "<group>"; };
+		56A888332EEA2344007E31A8 /* AllWorkoutsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWorkoutsViewModel.swift; sourceTree = "<group>"; };
+		56A888372EEA2351007E31A8 /* ProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewModel.swift; sourceTree = "<group>"; };
+		56A8883F2EEA237A007E31A8 /* AllWorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWorkoutsView.swift; sourceTree = "<group>"; };
+		56A888432EEA238D007E31A8 /* WorkoutDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailView.swift; sourceTree = "<group>"; };
+		56A888472EEA23A6007E31A8 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		56A8884B2EEA23CE007E31A8 /* WorkoutComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutComponents.swift; sourceTree = "<group>"; };
+		56A8884F2EEA23E1007E31A8 /* ProgressComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressComponents.swift; sourceTree = "<group>"; };
+		56A888592EEA26C8007E31A8 /* AddWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutView.swift; sourceTree = "<group>"; };
+		56CCA4C42E2FD91E000DDE9A /* Athly - Production.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Athly - Production.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56CCA4D92E2FD997000DDE9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		56CCA4DA2E2FD997000DDE9A /* AthlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthlyApp.swift; sourceTree = "<group>"; };
+		56CCA4E02E2FD9CD000DDE9A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		56CCA4E22E2FD9EA000DDE9A /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		56CCA4EA2E2FDA92000DDE9A /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		56CCA4ED2E2FDABF000DDE9A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		56CCA4EF2E2FDAE1000DDE9A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		56CCA5062E2FDBB0000DDE9A /* Athly - Staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Athly - Staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56CCA5192E2FDBB2000DDE9A /* Athly - Development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Athly - Development.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56CCA51A2E2FE065000DDE9A /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		56CCA51E2E2FE081000DDE9A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		56CCA5222E2FE091000DDE9A /* VerificationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeView.swift; sourceTree = "<group>"; };
+		56CCA5262E2FE0A1000DDE9A /* NewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordView.swift; sourceTree = "<group>"; };
+		56CCA52E2E2FE0C4000DDE9A /* PasswordChangedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangedView.swift; sourceTree = "<group>"; };
+		56CCA5512E2FE1D7000DDE9A /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
+		56CCA5552E2FE1E6000DDE9A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		56CCA55F2E2FE228000DDE9A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		56CCA56B2E2FE2DE000DDE9A /* CustomConfirmationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomConfirmationCodeView.swift; sourceTree = "<group>"; };
+		56CCA5852E2FE386000DDE9A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		56CCA5892E2FE3AC000DDE9A /* CustomTextInputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextInputValidator.swift; sourceTree = "<group>"; };
+		56CCA58D2E2FE3C9000DDE9A /* CustomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSheet.swift; sourceTree = "<group>"; };
+		56CCA5912E2FE404000DDE9A /* NoInternetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetView.swift; sourceTree = "<group>"; };
+		56CCA5962E2FE53A000DDE9A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		56CCA59A2E2FE555000DDE9A /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
+		56CCA59E2E2FE564000DDE9A /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
+		56CCA5A22E2FE57A000DDE9A /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		56CCA5A62E2FE591000DDE9A /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		56CCA5AA2E2FE5A3000DDE9A /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		56CCA5AE2E2FE5B9000DDE9A /* NavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+.swift"; sourceTree = "<group>"; };
+		56CCA5B22E2FE5C6000DDE9A /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		56CCA5B62E2FE5D7000DDE9A /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		56CCA5BB2E2FE5F4000DDE9A /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		56CCA5C32E2FE616000DDE9A /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		56CCA5C72E2FE625000DDE9A /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		56CCA5CC2E2FE643000DDE9A /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		56CCA5D02E2FE670000DDE9A /* ProjectConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectConstants.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		56CCA4C12E2FD91E000DDE9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56CCA5002E2FDBB0000DDE9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56CCA5132E2FDBB2000DDE9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5673E9322EE24BCD00688250 /* SettingsComponents */ = {
+			isa = PBXGroup;
+			children = (
+				5673E9332EE24C6A00688250 /* SettingsRow.swift */,
+			);
+			path = SettingsComponents;
+			sourceTree = "<group>";
+		};
+		5673E9392EE24CA100688250 /* HomeComponents */ = {
+			isa = PBXGroup;
+			children = (
+				5673E9372EE24CA100688250 /* QuickActionButton.swift */,
+				5673E9382EE24CA100688250 /* WorkoutCard.swift */,
+			);
+			path = HomeComponents;
+			sourceTree = "<group>";
+		};
+		5673E9412EE24CD500688250 /* CalendarComponents */ = {
+			isa = PBXGroup;
+			children = (
+				5673E9402EE24CD500688250 /* CalendarDayView.swift */,
+			);
+			path = CalendarComponents;
+			sourceTree = "<group>";
+		};
+		5673E94D2EE24F8300688250 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5673E9462EE24F8300688250 /* AboutView.swift */,
+				5673E9472EE24F8300688250 /* ChangePasswordView.swift */,
+				5673E9482EE24F8300688250 /* EmailSettingsView.swift */,
+				5673E9492EE24F8300688250 /* NotificationsSettingsView.swift */,
+				5673E94A2EE24F8300688250 /* PrivacyPolicyView.swift */,
+				5673E94B2EE24F8300688250 /* TermsOfServiceView.swift */,
+				5673E94C2EE24F8300688250 /* UnitsSettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		5673E9692EE2529B00688250 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				56A8882F2EEA233A007E31A8 /* AddWorkoutViewModel.swift */,
+				5673E9632EE2529B00688250 /* CalendarViewModel.swift */,
+				5673E9642EE2529B00688250 /* ChangePasswordViewModel.swift */,
+				5673E9652EE2529B00688250 /* EmailSettingsViewModel.swift */,
+				5673E9662EE2529B00688250 /* HomeViewModel.swift */,
+				5673E9672EE2529B00688250 /* NotificationsSettingsViewModel.swift */,
+				5673E9682EE2529B00688250 /* UnitsSettingsViewModel.swift */,
+				56A888332EEA2344007E31A8 /* AllWorkoutsViewModel.swift */,
+				56A888372EEA2351007E31A8 /* ProgressViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		56A888572EEA24C6007E31A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				56A8882B2EEA2332007E31A8 /* ModelsWorkoutModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		56A888582EEA2534007E31A8 /* Workouts */ = {
+			isa = PBXGroup;
+			children = (
+				56A8883F2EEA237A007E31A8 /* AllWorkoutsView.swift */,
+				56A888432EEA238D007E31A8 /* WorkoutDetailView.swift */,
+				56A888592EEA26C8007E31A8 /* AddWorkoutView.swift */,
+			);
+			path = Workouts;
+			sourceTree = "<group>";
+		};
+		56CCA4BB2E2FD91E000DDE9A = {
+			isa = PBXGroup;
+			children = (
+				5673E9202EE20DEC00688250 /* Athly---Development-Info.plist */,
+				56CCA4DC2E2FD997000DDE9A /* Athly */,
+				56CCA4C52E2FD91E000DDE9A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		56CCA4C52E2FD91E000DDE9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56CCA4C42E2FD91E000DDE9A /* Athly - Production.app */,
+				56CCA5062E2FDBB0000DDE9A /* Athly - Staging.app */,
+				56CCA5192E2FDBB2000DDE9A /* Athly - Development.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		56CCA4DC2E2FD997000DDE9A /* Athly */ = {
+			isa = PBXGroup;
+			children = (
+				56CCA4DA2E2FD997000DDE9A /* AthlyApp.swift */,
+				56CCA4E02E2FD9CD000DDE9A /* WelcomeView.swift */,
+				56CCA4E22E2FD9EA000DDE9A /* SplashView.swift */,
+				56A888572EEA24C6007E31A8 /* Models */,
+				56CCA4E42E2FD9FE000DDE9A /* LogIn-Register */,
+				56CCA5502E2FE1C6000DDE9A /* Home */,
+				56CCA55E2E2FE217000DDE9A /* Shared Views */,
+				56CCA5952E2FE529000DDE9A /* Extensions */,
+				56CCA5BA2E2FE5E8000DDE9A /* Helpers */,
+				56CCA5CB2E2FE635000DDE9A /* Networking */,
+				56CCA4D92E2FD997000DDE9A /* Assets.xcassets */,
+			);
+			path = Athly;
+			sourceTree = "<group>";
+		};
+		56CCA4E42E2FD9FE000DDE9A /* LogIn-Register */ = {
+			isa = PBXGroup;
+			children = (
+				56CCA4E72E2FDA68000DDE9A /* Register */,
+				56CCA4EC2E2FDAA5000DDE9A /* LogIn */,
+				56CCA4F12E2FDB16000DDE9A /* ForgotPassword */,
+			);
+			path = "LogIn-Register";
+			sourceTree = "<group>";
+		};
+		56CCA4E72E2FDA68000DDE9A /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				5673E91C2EE1F8FC00688250 /* RegisterView.swift */,
+				56CCA4EA2E2FDA92000DDE9A /* RegisterViewModel.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		56CCA4EC2E2FDAA5000DDE9A /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				56CCA4ED2E2FDABF000DDE9A /* LoginView.swift */,
+				56CCA4EF2E2FDAE1000DDE9A /* LoginViewModel.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		56CCA4F12E2FDB16000DDE9A /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				56CCA51A2E2FE065000DDE9A /* ForgotPasswordViewModel.swift */,
+				56CCA51E2E2FE081000DDE9A /* ForgotPasswordView.swift */,
+				56CCA5222E2FE091000DDE9A /* VerificationCodeView.swift */,
+				56CCA5262E2FE0A1000DDE9A /* NewPasswordView.swift */,
+				56CCA52E2E2FE0C4000DDE9A /* PasswordChangedView.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		56CCA5502E2FE1C6000DDE9A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5673E9692EE2529B00688250 /* ViewModels */,
+				5673E94D2EE24F8300688250 /* Settings */,
+				56A888582EEA2534007E31A8 /* Workouts */,
+				56CCA5512E2FE1D7000DDE9A /* AuthenticatedView.swift */,
+				5673E9292EE2481B00688250 /* CalendarView.swift */,
+				56CCA5552E2FE1E6000DDE9A /* HomeView.swift */,
+				5673E92D2EE2482300688250 /* SettingsView.swift */,
+				5673E97C2EE257A800688250 /* CustomTabBar.swift */,
+				56A888472EEA23A6007E31A8 /* ProgressView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		56CCA55E2E2FE217000DDE9A /* Shared Views */ = {
+			isa = PBXGroup;
+			children = (
+				5673E9412EE24CD500688250 /* CalendarComponents */,
+				5673E9392EE24CA100688250 /* HomeComponents */,
+				5673E9322EE24BCD00688250 /* SettingsComponents */,
+				56CCA55F2E2FE228000DDE9A /* CustomButton.swift */,
+				56CCA56B2E2FE2DE000DDE9A /* CustomConfirmationCodeView.swift */,
+				56CCA5852E2FE386000DDE9A /* CustomTextField.swift */,
+				56CCA5892E2FE3AC000DDE9A /* CustomTextInputValidator.swift */,
+				56CCA58D2E2FE3C9000DDE9A /* CustomSheet.swift */,
+				56CCA5912E2FE404000DDE9A /* NoInternetView.swift */,
+				56A8884B2EEA23CE007E31A8 /* WorkoutComponents.swift */,
+				56A8884F2EEA23E1007E31A8 /* ProgressComponents.swift */,
+			);
+			path = "Shared Views";
+			sourceTree = "<group>";
+		};
+		56CCA5952E2FE529000DDE9A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				56CCA5962E2FE53A000DDE9A /* Extensions.swift */,
+				56CCA59A2E2FE555000DDE9A /* Array+.swift */,
+				56CCA59E2E2FE564000DDE9A /* Bundle+.swift */,
+				56CCA5A22E2FE57A000DDE9A /* Color+.swift */,
+				56CCA5A62E2FE591000DDE9A /* Font+.swift */,
+				56CCA5AA2E2FE5A3000DDE9A /* Int+.swift */,
+				56CCA5AE2E2FE5B9000DDE9A /* NavigationController+.swift */,
+				56CCA5B22E2FE5C6000DDE9A /* String+.swift */,
+				56CCA5B62E2FE5D7000DDE9A /* View+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		56CCA5BA2E2FE5E8000DDE9A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5673E9212EE2401B00688250 /* NavigationCoordinator.swift */,
+				56CCA5BB2E2FE5F4000DDE9A /* AuthManager.swift */,
+				56CCA5C32E2FE616000DDE9A /* KeychainHelper.swift */,
+				56CCA5C72E2FE625000DDE9A /* NetworkMonitor.swift */,
+				56CCA5D02E2FE670000DDE9A /* ProjectConstants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		56CCA5CB2E2FE635000DDE9A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				56CCA5CC2E2FE643000DDE9A /* ApiClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		56CCA4C32E2FD91E000DDE9A /* Athly - Production */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56CCA4CF2E2FD91F000DDE9A /* Build configuration list for PBXNativeTarget "Athly - Production" */;
+			buildPhases = (
+				56CCA4C02E2FD91E000DDE9A /* Sources */,
+				56CCA4C12E2FD91E000DDE9A /* Frameworks */,
+				56CCA4C22E2FD91E000DDE9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Athly - Production";
+			packageProductDependencies = (
+			);
+			productName = Athly;
+			productReference = 56CCA4C42E2FD91E000DDE9A /* Athly - Production.app */;
+			productType = "com.apple.product-type.application";
+		};
+		56CCA4F42E2FDBB0000DDE9A /* Athly - Staging */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56CCA5032E2FDBB0000DDE9A /* Build configuration list for PBXNativeTarget "Athly - Staging" */;
+			buildPhases = (
+				56CCA4F52E2FDBB0000DDE9A /* Sources */,
+				56CCA5002E2FDBB0000DDE9A /* Frameworks */,
+				56CCA5012E2FDBB0000DDE9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Athly - Staging";
+			packageProductDependencies = (
+			);
+			productName = Athly;
+			productReference = 56CCA5062E2FDBB0000DDE9A /* Athly - Staging.app */;
+			productType = "com.apple.product-type.application";
+		};
+		56CCA5072E2FDBB2000DDE9A /* Athly - Development */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56CCA5162E2FDBB2000DDE9A /* Build configuration list for PBXNativeTarget "Athly - Development" */;
+			buildPhases = (
+				56CCA5082E2FDBB2000DDE9A /* Sources */,
+				56CCA5132E2FDBB2000DDE9A /* Frameworks */,
+				56CCA5142E2FDBB2000DDE9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Athly - Development";
+			packageProductDependencies = (
+			);
+			productName = Athly;
+			productReference = 56CCA5192E2FDBB2000DDE9A /* Athly - Development.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		56CCA4BC2E2FD91E000DDE9A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					56CCA4C32E2FD91E000DDE9A = {
+						CreatedOnToolsVersion = 16.4;
+					};
+				};
+			};
+			buildConfigurationList = 56CCA4BF2E2FD91E000DDE9A /* Build configuration list for PBXProject "Athly" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 56CCA4BB2E2FD91E000DDE9A;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 56CCA4C52E2FD91E000DDE9A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				56CCA4C32E2FD91E000DDE9A /* Athly - Production */,
+				56CCA4F42E2FDBB0000DDE9A /* Athly - Staging */,
+				56CCA5072E2FDBB2000DDE9A /* Athly - Development */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		56CCA4C22E2FD91E000DDE9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56CCA4DD2E2FD997000DDE9A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56CCA5012E2FDBB0000DDE9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56CCA5022E2FDBB0000DDE9A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56CCA5142E2FDBB2000DDE9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56CCA5152E2FDBB2000DDE9A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		56CCA4C02E2FD91E000DDE9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56CCA4DE2E2FD997000DDE9A /* AthlyApp.swift in Sources */,
+				56CCA4E32E2FD9EA000DDE9A /* SplashView.swift in Sources */,
+				5673E92A2EE2481B00688250 /* CalendarView.swift in Sources */,
+				56CCA4EB2E2FDA92000DDE9A /* RegisterViewModel.swift in Sources */,
+				56A888392EEA2351007E31A8 /* ProgressViewModel.swift in Sources */,
+				56CCA5572E2FE1E6000DDE9A /* HomeView.swift in Sources */,
+				56A888412EEA237A007E31A8 /* AllWorkoutsView.swift in Sources */,
+				56A888362EEA2344007E31A8 /* AllWorkoutsViewModel.swift in Sources */,
+				56CCA5A52E2FE57A000DDE9A /* Color+.swift in Sources */,
+				5673E9232EE2401B00688250 /* NavigationCoordinator.swift in Sources */,
+				56CCA4E12E2FD9CD000DDE9A /* WelcomeView.swift in Sources */,
+				56A888442EEA238D007E31A8 /* WorkoutDetailView.swift in Sources */,
+				56CCA5CD2E2FE643000DDE9A /* ApiClient.swift in Sources */,
+				56CCA5C82E2FE625000DDE9A /* NetworkMonitor.swift in Sources */,
+				56CCA5882E2FE386000DDE9A /* CustomTextField.swift in Sources */,
+				56CCA4F02E2FDAE1000DDE9A /* LoginViewModel.swift in Sources */,
+				56CCA5A82E2FE591000DDE9A /* Font+.swift in Sources */,
+				56CCA5B52E2FE5C7000DDE9A /* String+.swift in Sources */,
+				56CCA5C42E2FE616000DDE9A /* KeychainHelper.swift in Sources */,
+				56CCA5282E2FE0A1000DDE9A /* NewPasswordView.swift in Sources */,
+				56A888312EEA233A007E31A8 /* AddWorkoutViewModel.swift in Sources */,
+				56CCA5942E2FE404000DDE9A /* NoInternetView.swift in Sources */,
+				56CCA59F2E2FE564000DDE9A /* Bundle+.swift in Sources */,
+				56CCA59C2E2FE555000DDE9A /* Array+.swift in Sources */,
+				56A8884C2EEA23CE007E31A8 /* WorkoutComponents.swift in Sources */,
+				5673E95C2EE24F8300688250 /* ChangePasswordView.swift in Sources */,
+				5673E95D2EE24F8300688250 /* NotificationsSettingsView.swift in Sources */,
+				5673E95E2EE24F8300688250 /* AboutView.swift in Sources */,
+				56A8882D2EEA2332007E31A8 /* ModelsWorkoutModels.swift in Sources */,
+				5673E95F2EE24F8300688250 /* UnitsSettingsView.swift in Sources */,
+				5673E9602EE24F8300688250 /* EmailSettingsView.swift in Sources */,
+				5673E9612EE24F8300688250 /* PrivacyPolicyView.swift in Sources */,
+				5673E9622EE24F8300688250 /* TermsOfServiceView.swift in Sources */,
+				56CCA5B12E2FE5B9000DDE9A /* NavigationController+.swift in Sources */,
+				56CCA51D2E2FE065000DDE9A /* ForgotPasswordViewModel.swift in Sources */,
+				5673E91D2EE1F8FC00688250 /* RegisterView.swift in Sources */,
+				56A888522EEA23E1007E31A8 /* ProgressComponents.swift in Sources */,
+				5673E9432EE24CD500688250 /* CalendarDayView.swift in Sources */,
+				5673E92E2EE2482300688250 /* SettingsView.swift in Sources */,
+				56CCA4EE2E2FDABF000DDE9A /* LoginView.swift in Sources */,
+				56CCA5B92E2FE5D7000DDE9A /* View+.swift in Sources */,
+				56CCA58A2E2FE3AC000DDE9A /* CustomTextInputValidator.swift in Sources */,
+				56CCA5522E2FE1D7000DDE9A /* AuthenticatedView.swift in Sources */,
+				56CCA5622E2FE228000DDE9A /* CustomButton.swift in Sources */,
+				56A888482EEA23A6007E31A8 /* ProgressView.swift in Sources */,
+				56CCA5AD2E2FE5A3000DDE9A /* Int+.swift in Sources */,
+				56CCA5BE2E2FE5F4000DDE9A /* AuthManager.swift in Sources */,
+				56CCA56E2E2FE2DE000DDE9A /* CustomConfirmationCodeView.swift in Sources */,
+				5673E93E2EE24CA100688250 /* WorkoutCard.swift in Sources */,
+				5673E93F2EE24CA100688250 /* QuickActionButton.swift in Sources */,
+				56CCA5302E2FE0C4000DDE9A /* PasswordChangedView.swift in Sources */,
+				56CCA5242E2FE091000DDE9A /* VerificationCodeView.swift in Sources */,
+				5673E97F2EE257A800688250 /* CustomTabBar.swift in Sources */,
+				56CCA5972E2FE53A000DDE9A /* Extensions.swift in Sources */,
+				56CCA5902E2FE3C9000DDE9A /* CustomSheet.swift in Sources */,
+				5673E9352EE24C6A00688250 /* SettingsRow.swift in Sources */,
+				5673E9702EE2529B00688250 /* CalendarViewModel.swift in Sources */,
+				56A8885B2EEA26C8007E31A8 /* AddWorkoutView.swift in Sources */,
+				5673E9712EE2529B00688250 /* NotificationsSettingsViewModel.swift in Sources */,
+				5673E9722EE2529B00688250 /* EmailSettingsViewModel.swift in Sources */,
+				5673E9732EE2529B00688250 /* HomeViewModel.swift in Sources */,
+				5673E9742EE2529B00688250 /* ChangePasswordViewModel.swift in Sources */,
+				5673E9752EE2529B00688250 /* UnitsSettingsViewModel.swift in Sources */,
+				56CCA51F2E2FE081000DDE9A /* ForgotPasswordView.swift in Sources */,
+				56CCA5D12E2FE670000DDE9A /* ProjectConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56CCA4F52E2FDBB0000DDE9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56CCA4F62E2FDBB0000DDE9A /* AthlyApp.swift in Sources */,
+				56CCA4F72E2FDBB0000DDE9A /* SplashView.swift in Sources */,
+				5673E92C2EE2481B00688250 /* CalendarView.swift in Sources */,
+				56CCA4F82E2FDBB0000DDE9A /* RegisterViewModel.swift in Sources */,
+				56A8883A2EEA2351007E31A8 /* ProgressViewModel.swift in Sources */,
+				56CCA5582E2FE1E6000DDE9A /* HomeView.swift in Sources */,
+				56A888402EEA237A007E31A8 /* AllWorkoutsView.swift in Sources */,
+				56A888352EEA2344007E31A8 /* AllWorkoutsViewModel.swift in Sources */,
+				56CCA5A42E2FE57A000DDE9A /* Color+.swift in Sources */,
+				5673E9242EE2401B00688250 /* NavigationCoordinator.swift in Sources */,
+				56CCA4F92E2FDBB0000DDE9A /* WelcomeView.swift in Sources */,
+				56A888462EEA238D007E31A8 /* WorkoutDetailView.swift in Sources */,
+				56CCA5CF2E2FE643000DDE9A /* ApiClient.swift in Sources */,
+				56CCA5C92E2FE625000DDE9A /* NetworkMonitor.swift in Sources */,
+				56CCA5862E2FE386000DDE9A /* CustomTextField.swift in Sources */,
+				56CCA4FA2E2FDBB0000DDE9A /* LoginViewModel.swift in Sources */,
+				56CCA5A72E2FE591000DDE9A /* Font+.swift in Sources */,
+				56CCA5B32E2FE5C7000DDE9A /* String+.swift in Sources */,
+				56CCA5C52E2FE616000DDE9A /* KeychainHelper.swift in Sources */,
+				56CCA5292E2FE0A1000DDE9A /* NewPasswordView.swift in Sources */,
+				56A888302EEA233A007E31A8 /* AddWorkoutViewModel.swift in Sources */,
+				56CCA5922E2FE404000DDE9A /* NoInternetView.swift in Sources */,
+				56CCA5A02E2FE564000DDE9A /* Bundle+.swift in Sources */,
+				56CCA59B2E2FE555000DDE9A /* Array+.swift in Sources */,
+				56A8884D2EEA23CE007E31A8 /* WorkoutComponents.swift in Sources */,
+				5673E9552EE24F8300688250 /* ChangePasswordView.swift in Sources */,
+				5673E9562EE24F8300688250 /* NotificationsSettingsView.swift in Sources */,
+				5673E9572EE24F8300688250 /* AboutView.swift in Sources */,
+				56A8882E2EEA2332007E31A8 /* ModelsWorkoutModels.swift in Sources */,
+				5673E9582EE24F8300688250 /* UnitsSettingsView.swift in Sources */,
+				5673E9592EE24F8300688250 /* EmailSettingsView.swift in Sources */,
+				5673E95A2EE24F8300688250 /* PrivacyPolicyView.swift in Sources */,
+				5673E95B2EE24F8300688250 /* TermsOfServiceView.swift in Sources */,
+				56CCA5AF2E2FE5B9000DDE9A /* NavigationController+.swift in Sources */,
+				56CCA51C2E2FE065000DDE9A /* ForgotPasswordViewModel.swift in Sources */,
+				5673E91F2EE1F8FC00688250 /* RegisterView.swift in Sources */,
+				56A888502EEA23E1007E31A8 /* ProgressComponents.swift in Sources */,
+				5673E9442EE24CD500688250 /* CalendarDayView.swift in Sources */,
+				5673E92F2EE2482300688250 /* SettingsView.swift in Sources */,
+				56CCA4FD2E2FDBB0000DDE9A /* LoginView.swift in Sources */,
+				56CCA5B82E2FE5D7000DDE9A /* View+.swift in Sources */,
+				56CCA58C2E2FE3AC000DDE9A /* CustomTextInputValidator.swift in Sources */,
+				56CCA5542E2FE1D7000DDE9A /* AuthenticatedView.swift in Sources */,
+				56CCA5602E2FE228000DDE9A /* CustomButton.swift in Sources */,
+				56A8884A2EEA23A6007E31A8 /* ProgressView.swift in Sources */,
+				56CCA5AC2E2FE5A3000DDE9A /* Int+.swift in Sources */,
+				56CCA5BC2E2FE5F4000DDE9A /* AuthManager.swift in Sources */,
+				56CCA56D2E2FE2DE000DDE9A /* CustomConfirmationCodeView.swift in Sources */,
+				5673E93C2EE24CA100688250 /* WorkoutCard.swift in Sources */,
+				5673E93D2EE24CA100688250 /* QuickActionButton.swift in Sources */,
+				56CCA52F2E2FE0C4000DDE9A /* PasswordChangedView.swift in Sources */,
+				56CCA5232E2FE091000DDE9A /* VerificationCodeView.swift in Sources */,
+				5673E97D2EE257A800688250 /* CustomTabBar.swift in Sources */,
+				56CCA5992E2FE53A000DDE9A /* Extensions.swift in Sources */,
+				56CCA58E2E2FE3C9000DDE9A /* CustomSheet.swift in Sources */,
+				5673E9342EE24C6A00688250 /* SettingsRow.swift in Sources */,
+				5673E96A2EE2529B00688250 /* CalendarViewModel.swift in Sources */,
+				56A8885A2EEA26C8007E31A8 /* AddWorkoutView.swift in Sources */,
+				5673E96B2EE2529B00688250 /* NotificationsSettingsViewModel.swift in Sources */,
+				5673E96C2EE2529B00688250 /* EmailSettingsViewModel.swift in Sources */,
+				5673E96D2EE2529B00688250 /* HomeViewModel.swift in Sources */,
+				5673E96E2EE2529B00688250 /* ChangePasswordViewModel.swift in Sources */,
+				5673E96F2EE2529B00688250 /* UnitsSettingsViewModel.swift in Sources */,
+				56CCA5202E2FE081000DDE9A /* ForgotPasswordView.swift in Sources */,
+				56CCA5D22E2FE670000DDE9A /* ProjectConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56CCA5082E2FDBB2000DDE9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56CCA5092E2FDBB2000DDE9A /* AthlyApp.swift in Sources */,
+				56CCA50A2E2FDBB2000DDE9A /* SplashView.swift in Sources */,
+				5673E92B2EE2481B00688250 /* CalendarView.swift in Sources */,
+				56CCA50B2E2FDBB2000DDE9A /* RegisterViewModel.swift in Sources */,
+				56A888382EEA2351007E31A8 /* ProgressViewModel.swift in Sources */,
+				56CCA5562E2FE1E6000DDE9A /* HomeView.swift in Sources */,
+				56A888422EEA237A007E31A8 /* AllWorkoutsView.swift in Sources */,
+				56A888342EEA2344007E31A8 /* AllWorkoutsViewModel.swift in Sources */,
+				56CCA5A32E2FE57A000DDE9A /* Color+.swift in Sources */,
+				5673E9222EE2401B00688250 /* NavigationCoordinator.swift in Sources */,
+				56CCA50C2E2FDBB2000DDE9A /* WelcomeView.swift in Sources */,
+				56A888452EEA238D007E31A8 /* WorkoutDetailView.swift in Sources */,
+				56CCA5CE2E2FE643000DDE9A /* ApiClient.swift in Sources */,
+				56CCA5CA2E2FE625000DDE9A /* NetworkMonitor.swift in Sources */,
+				56CCA5872E2FE386000DDE9A /* CustomTextField.swift in Sources */,
+				56CCA50D2E2FDBB2000DDE9A /* LoginViewModel.swift in Sources */,
+				56CCA5A92E2FE591000DDE9A /* Font+.swift in Sources */,
+				56CCA5B42E2FE5C7000DDE9A /* String+.swift in Sources */,
+				56CCA5C62E2FE616000DDE9A /* KeychainHelper.swift in Sources */,
+				56CCA5272E2FE0A1000DDE9A /* NewPasswordView.swift in Sources */,
+				56A888322EEA233A007E31A8 /* AddWorkoutViewModel.swift in Sources */,
+				56CCA5932E2FE404000DDE9A /* NoInternetView.swift in Sources */,
+				56CCA5A12E2FE564000DDE9A /* Bundle+.swift in Sources */,
+				56CCA59D2E2FE555000DDE9A /* Array+.swift in Sources */,
+				56A8884E2EEA23CE007E31A8 /* WorkoutComponents.swift in Sources */,
+				5673E94E2EE24F8300688250 /* ChangePasswordView.swift in Sources */,
+				5673E94F2EE24F8300688250 /* NotificationsSettingsView.swift in Sources */,
+				5673E9502EE24F8300688250 /* AboutView.swift in Sources */,
+				56A8882C2EEA2332007E31A8 /* ModelsWorkoutModels.swift in Sources */,
+				5673E9512EE24F8300688250 /* UnitsSettingsView.swift in Sources */,
+				5673E9522EE24F8300688250 /* EmailSettingsView.swift in Sources */,
+				5673E9532EE24F8300688250 /* PrivacyPolicyView.swift in Sources */,
+				5673E9542EE24F8300688250 /* TermsOfServiceView.swift in Sources */,
+				56CCA5B02E2FE5B9000DDE9A /* NavigationController+.swift in Sources */,
+				56CCA51B2E2FE065000DDE9A /* ForgotPasswordViewModel.swift in Sources */,
+				5673E91E2EE1F8FC00688250 /* RegisterView.swift in Sources */,
+				56A888512EEA23E1007E31A8 /* ProgressComponents.swift in Sources */,
+				5673E9422EE24CD500688250 /* CalendarDayView.swift in Sources */,
+				5673E9302EE2482300688250 /* SettingsView.swift in Sources */,
+				56CCA5102E2FDBB2000DDE9A /* LoginView.swift in Sources */,
+				56CCA5B72E2FE5D7000DDE9A /* View+.swift in Sources */,
+				56CCA58B2E2FE3AC000DDE9A /* CustomTextInputValidator.swift in Sources */,
+				56CCA5532E2FE1D7000DDE9A /* AuthenticatedView.swift in Sources */,
+				56CCA5612E2FE228000DDE9A /* CustomButton.swift in Sources */,
+				56A888492EEA23A6007E31A8 /* ProgressView.swift in Sources */,
+				56CCA5AB2E2FE5A3000DDE9A /* Int+.swift in Sources */,
+				56CCA5BD2E2FE5F4000DDE9A /* AuthManager.swift in Sources */,
+				56CCA56C2E2FE2DE000DDE9A /* CustomConfirmationCodeView.swift in Sources */,
+				5673E93A2EE24CA100688250 /* WorkoutCard.swift in Sources */,
+				5673E93B2EE24CA100688250 /* QuickActionButton.swift in Sources */,
+				56CCA5312E2FE0C4000DDE9A /* PasswordChangedView.swift in Sources */,
+				56CCA5252E2FE091000DDE9A /* VerificationCodeView.swift in Sources */,
+				5673E97E2EE257A800688250 /* CustomTabBar.swift in Sources */,
+				56CCA5982E2FE53A000DDE9A /* Extensions.swift in Sources */,
+				56CCA58F2E2FE3C9000DDE9A /* CustomSheet.swift in Sources */,
+				5673E9362EE24C6A00688250 /* SettingsRow.swift in Sources */,
+				5673E9762EE2529B00688250 /* CalendarViewModel.swift in Sources */,
+				56A8885C2EEA26C8007E31A8 /* AddWorkoutView.swift in Sources */,
+				5673E9772EE2529B00688250 /* NotificationsSettingsViewModel.swift in Sources */,
+				5673E9782EE2529B00688250 /* EmailSettingsViewModel.swift in Sources */,
+				5673E9792EE2529B00688250 /* HomeViewModel.swift in Sources */,
+				5673E97A2EE2529B00688250 /* ChangePasswordViewModel.swift in Sources */,
+				5673E97B2EE2529B00688250 /* UnitsSettingsViewModel.swift in Sources */,
+				56CCA5212E2FE081000DDE9A /* ForgotPasswordView.swift in Sources */,
+				56CCA5D32E2FE670000DDE9A /* ProjectConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		56CCA4CD2E2FD91F000DDE9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3G8456QCC9;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		56CCA4CE2E2FD91F000DDE9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3G8456QCC9;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		56CCA4D02E2FD91F000DDE9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3G8456QCC9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Athly;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mint.athly;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		56CCA4D12E2FD91F000DDE9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3G8456QCC9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Athly;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mint.athly;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		56CCA5042E2FDBB0000DDE9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3G8456QCC9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Athly - staging";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mint.athly.staging;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		56CCA5052E2FDBB0000DDE9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3G8456QCC9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Athly - staging";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mint.athly.staging;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		56CCA5172E2FDBB2000DDE9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3G8456QCC9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Athly---Development-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Athly - dev";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.athly.mint.dev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		56CCA5182E2FDBB2000DDE9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3G8456QCC9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Athly---Development-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Athly - dev";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.athly.mint.dev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		56CCA4BF2E2FD91E000DDE9A /* Build configuration list for PBXProject "Athly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56CCA4CD2E2FD91F000DDE9A /* Debug */,
+				56CCA4CE2E2FD91F000DDE9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56CCA4CF2E2FD91F000DDE9A /* Build configuration list for PBXNativeTarget "Athly - Production" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56CCA4D02E2FD91F000DDE9A /* Debug */,
+				56CCA4D12E2FD91F000DDE9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56CCA5032E2FDBB0000DDE9A /* Build configuration list for PBXNativeTarget "Athly - Staging" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56CCA5042E2FDBB0000DDE9A /* Debug */,
+				56CCA5052E2FDBB0000DDE9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56CCA5162E2FDBB2000DDE9A /* Build configuration list for PBXNativeTarget "Athly - Development" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56CCA5172E2FDBB2000DDE9A /* Debug */,
+				56CCA5182E2FDBB2000DDE9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 56CCA4BC2E2FD91E000DDE9A /* Project object */;
+}

@@ -1,0 +1,89 @@
+//
+//  WelcomeView.swift
+//  Athly
+//
+//  Created by Petar Popovski on 22.7.25.
+//
+
+import SwiftUI
+
+struct WelcomeView: View {
+    @State private var coordinator = NavigationCoordinator()
+    @State private var forgotPasswordViewModel = ForgotPasswordViewModel()
+
+    var body: some View {
+        switch AuthManager.shared.userState {
+        case .loggedOut, .needsOnboarding:
+            ZStack {
+                CustomColor.bgBlack.ignoresSafeArea()
+
+                NavigationStack(path: $coordinator.path) {
+                    SplashView()
+                        .navigationDestination(for: WelcomeScreen.self) { screen in
+                            ZStack {
+                                CustomColor.bgBlack.ignoresSafeArea()
+                                viewForScreen(screen)
+                            }
+                            .background(CustomColor.bgBlack)
+                        }
+                        .toolbarBackground(CustomColor.bgBlack, for: .navigationBar)
+                        .toolbarColorScheme(.dark, for: .navigationBar)
+                }
+                .environment(coordinator)
+                .onChange(of: forgotPasswordViewModel.forgotPasswordState) { _, newValue in
+                    handleForgotPasswordStateChange(newValue)
+                }
+            }
+            .preferredColorScheme(.dark)
+            .onAppear {
+                coordinator.popToRoot()
+            }
+        case .authenticated:
+            AuthenticatedView()
+                .environment(coordinator)
+                .onAppear {
+                    coordinator.popToRoot()
+                }
+        }
+    }
+
+    @ViewBuilder
+    private func viewForScreen(_ screen: WelcomeScreen) -> some View {
+        switch screen {
+        case .login:
+            LoginView()
+        case .register:
+            RegisterView()
+        case .forgotPassword:
+            ForgotPasswordView()
+                .environment(forgotPasswordViewModel)
+        case .verificationCode:
+            VerificationCodeView()
+                .environment(forgotPasswordViewModel)
+        case .newPassword:
+            NewPasswordView()
+                .environment(forgotPasswordViewModel)
+        case .passwordChanged:
+            PasswordChangedView()
+                .environment(forgotPasswordViewModel)
+        }
+    }
+
+    private func handleForgotPasswordStateChange(_ state: ForgotPasswordState) {
+        switch state {
+        case .forgotPassword:
+            // Don't navigate - this is handled by LoginView
+            break
+        case .verificationCode:
+            coordinator.push(WelcomeScreen.verificationCode)
+        case .newPassword:
+            coordinator.push(WelcomeScreen.newPassword)
+        case .passwordChanged:
+            coordinator.push(WelcomeScreen.passwordChanged)
+        }
+    }
+}
+
+#Preview {
+    WelcomeView()
+}
