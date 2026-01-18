@@ -46,7 +46,7 @@ struct WorkoutDetailView: View {
             Spacer()
         }
         .padding(.top, 10)
-        
+
         VStack(alignment: .leading, spacing: 12) {
             HStack {
                 ZStack {
@@ -132,17 +132,6 @@ struct WorkoutDetailView: View {
     private var actionButtons: some View {
         VStack(spacing: 12) {
             if !workout.isCompleted {
-                CustomButton(
-                    buttonText: "Start Workout",
-                    cornerRadius: ButtonCornerRadius,
-                    backgroundColor: CustomColor.primary,
-                    contentsColor: CustomColor.bgBlack,
-                    buttonType: .primary,
-                    action: {
-                        // Start workout action
-                    }
-                )
-
                 CustomButton(
                     buttonText: "Edit Workout",
                     cornerRadius: ButtonCornerRadius,

@@ -16,7 +16,7 @@ struct AllWorkoutsView: View {
         ZStack {
             CustomColor.bgBlack.ignoresSafeArea()
 
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: 28) {
                 header
                 searchBar
                 filterTabs
@@ -25,8 +25,11 @@ struct AllWorkoutsView: View {
             .padding(.horizontal, 16)
         }
         .navigationBarHidden(true)
+        .onAppear {
+            viewModel.loadWorkouts()
+        }
     }
-    
+
     @ViewBuilder
     private var header: some View {
         HStack {
@@ -39,6 +42,26 @@ struct AllWorkoutsView: View {
             }
 
             Spacer()
+
+            Button {
+                withAnimation(.snappy) {
+                    navigation.push(HomeScreen.addWorkout)
+                }
+            } label: {
+                Image(systemName: "plus")
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundColor(CustomColor.primary)
+                    .padding(8)
+                    .background(
+                        Circle()
+                            .fill(Color.white.opacity(0.05))
+                    )
+                    .overlay(
+                        Circle()
+                            .stroke(CustomColor.primary.opacity(0.5), lineWidth: 1)
+                    )
+            }
+            .buttonStyle(ScaleButtonStyle())
         }
         .padding(.top, 10)
 
@@ -57,7 +80,7 @@ struct AllWorkoutsView: View {
             HStack(spacing: 12) {
                 Image(systemName: "magnifyingglass")
                     .font(.system(size: 16, weight: .semibold))
-                    .foregroundColor(.white.opacity(0.5))
+                    .foregroundColor(CustomColor.primary)
 
                 TextField("Search workouts...", text: $viewModel.searchText)
                     .font(.system(size: 16))
@@ -70,7 +93,7 @@ struct AllWorkoutsView: View {
                     } label: {
                         Image(systemName: "xmark.circle.fill")
                             .font(.system(size: 16))
-                            .foregroundColor(.white.opacity(0.5))
+                            .foregroundColor(CustomColor.primary.opacity(0.7))
                     }
                 }
             }
@@ -78,7 +101,11 @@ struct AllWorkoutsView: View {
             .padding(.vertical, 12)
             .background(
                 RoundedRectangle(cornerRadius: 12)
-                    .fill(Color.white.opacity(0.1))
+                    .fill(Color.white.opacity(0.06))
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(CustomColor.primary.opacity(0.4), lineWidth: 1)
             )
         }
     }
@@ -91,7 +118,7 @@ struct AllWorkoutsView: View {
                     title: filter.rawValue,
                     isSelected: viewModel.selectedFilter == filter
                 ) {
-                    withAnimation(.spring(response: 0.3)) {
+                    withAnimation(.snappy) {
                         viewModel.changeFilter(to: filter)
                     }
                 }
@@ -116,12 +143,19 @@ struct AllWorkoutsView: View {
                             isCompleted: workout.isCompleted,
                             date: workout.date
                         ) {
-                            navigation.push(HomeScreen.workoutDetail(workout))
+                            withAnimation(.snappy) {
+                                navigation.push(HomeScreen.workoutDetail(workout))
+                            }
                         }
+                        .transition(AnyTransition.asymmetric(
+                            insertion: AnyTransition.move(edge: .bottom).combined(with: .opacity),
+                            removal: .opacity
+                        ))
                     }
                 }
             }
             .padding(.bottom, 100)
+            .animation(.snappy, value: viewModel.filteredWorkouts)
         }
     }
 
@@ -141,6 +175,14 @@ struct AllWorkoutsView: View {
                 .foregroundColor(.white.opacity(0.6))
         }
         .padding(.top, 60)
+    }
+}
+
+struct ScaleButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
+            .animation(.easeInOut(duration: 0.15), value: configuration.isPressed)
     }
 }
 

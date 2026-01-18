@@ -59,7 +59,6 @@ enum HomeScreen: Hashable {
     case settings
     case emailSettings
     case changePassword
-    case notificationsSettings
     case unitsSettings
     case about
     case privacyPolicy

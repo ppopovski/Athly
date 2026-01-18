@@ -7,74 +7,127 @@
 
 import SwiftUI
 
+@MainActor
 @Observable
 class ProgressViewModel {
     var selectedTimeRange: TimeRange = .week
-    
+    var workouts: [WorkoutData] = []
+
+    init() {
+        loadWorkouts()
+    }
+
     var totalWorkouts: Int {
-        24 // Mock data
+        workouts.count
     }
-    
-    var totalCalories: String {
-        "12.5K" // Mock data
-    }
-    
+
     var totalTime: String {
-        "28h" // Mock data
+        let totalMinutes = workouts.reduce(0) { total, workout in
+            total + workout.timeMinutes
+        }
+        return formatMinutes(totalMinutes)
     }
-    
+
     var currentStreak: Int {
-        7 // Mock data
+        calculateStreak()
     }
-    
+
     var chartData: [ChartData] {
         switch selectedTimeRange {
         case .week:
-            return [
-                ChartData(day: "Mon", workouts: 2),
-                ChartData(day: "Tue", workouts: 1),
-                ChartData(day: "Wed", workouts: 3),
-                ChartData(day: "Thu", workouts: 1),
-                ChartData(day: "Fri", workouts: 2),
-                ChartData(day: "Sat", workouts: 4),
-                ChartData(day: "Sun", workouts: 1)
-            ]
+            return weeklyChartData()
         case .month:
-            return [
-                ChartData(day: "Week 1", workouts: 8),
-                ChartData(day: "Week 2", workouts: 6),
-                ChartData(day: "Week 3", workouts: 7),
-                ChartData(day: "Week 4", workouts: 9)
-            ]
+            return monthlyChartData()
         case .year:
-            return [
-                ChartData(day: "Jan", workouts: 20),
-                ChartData(day: "Feb", workouts: 18),
-                ChartData(day: "Mar", workouts: 24),
-                ChartData(day: "Apr", workouts: 22),
-                ChartData(day: "May", workouts: 26),
-                ChartData(day: "Jun", workouts: 23)
-            ]
+            return yearlyChartData()
         }
     }
-    
-    var categoryData: [(icon: String, title: String, workouts: Int, total: Int, color: Color)] {
-        [
-            (icon: "dumbbell.fill", title: "Strength", workouts: 15, total: 24, color: CustomColor.primary),
-            (icon: "heart.fill", title: "Cardio", workouts: 6, total: 24, color: CustomColor.accent),
-            (icon: "figure.flexibility", title: "Flexibility", workouts: 3, total: 24, color: CustomColor.link)
-        ]
+
+    var categoryData: [CategoryStat] {
+        []
     }
-    
-    var achievements: [(icon: String, title: String, description: String, color: Color)] {
-        [
-            (icon: "flame.fill", title: "7 Day Streak", description: "Keep the momentum going!", color: CustomColor.success),
-            (icon: "star.fill", title: "20 Workouts", description: "You've completed 20 workouts this month", color: CustomColor.accent),
-            (icon: "bolt.fill", title: "Personal Best", description: "New record on Bench Press", color: CustomColor.primary)
-        ]
-    }
-    
+
     func changeTimeRange(to range: TimeRange) {
         selectedTimeRange = range
+    }
+
+    func loadWorkouts() {
+        let userId = AuthManager.shared.getUserId()
+        workouts = WorkoutStorage.shared.loadWorkouts(userId: userId)
+    }
+
+    private func weeklyChartData() -> [ChartData] {
+        let calendar = Calendar.current
+        let today = Date()
+        let last7Days = (0..<7).map { offset in
+            calendar.date(byAdding: .day, value: -offset, to: today) ?? today
+        }.reversed()
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEE"
+
+        return last7Days.map { date in
+            let count = workouts.filter { calendar.isDate($0.dateCreated, inSameDayAs: date) }.count
+            return ChartData(day: formatter.string(from: date), workouts: count)
+        }
+    }
+
+    private func monthlyChartData() -> [ChartData] {
+        let calendar = Calendar.current
+        let today = Date()
+        let weeks = (0..<4).map { offset in
+            calendar.date(byAdding: .weekOfYear, value: -offset, to: today) ?? today
+        }.reversed()
+
+        return weeks.enumerated().map { index, weekStart in
+            let weekRange = calendar.dateInterval(of: .weekOfYear, for: weekStart)
+            let count = workouts.filter { workout in
+                guard let range = weekRange else { return false }
+                return range.contains(workout.dateCreated)
+            }.count
+            return ChartData(day: "Week \(index + 1)", workouts: count)
+        }
+    }
+
+    private func yearlyChartData() -> [ChartData] {
+        let calendar = Calendar.current
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM"
+
+        let months = (0..<12).map { offset in
+            calendar.date(byAdding: .month, value: -offset, to: Date()) ?? Date()
+        }.reversed()
+
+        return months.map { date in
+            let monthRange = calendar.dateInterval(of: .month, for: date)
+            let count = workouts.filter { workout in
+                guard let range = monthRange else { return false }
+                return range.contains(workout.dateCreated)
+            }.count
+            return ChartData(day: formatter.string(from: date), workouts: count)
+        }
+    }
+
+    private func calculateStreak() -> Int {
+        let calendar = Calendar.current
+        var streak = 0
+        var currentDate = Date()
+
+        while workouts.contains(where: { calendar.isDate($0.dateCreated, inSameDayAs: currentDate) }) {
+            streak += 1
+            currentDate = calendar.date(byAdding: .day, value: -1, to: currentDate) ?? currentDate
+        }
+
+        return streak
+    }
+
+    private func formatMinutes(_ minutes: Int) -> String {
+        guard minutes > 0 else { return "0h" }
+        let hours = minutes / 60
+        let remainingMinutes = minutes % 60
+        if remainingMinutes == 0 {
+            return "\(hours)h"
+        }
+        return "\(hours)h \(remainingMinutes)m"
     }
 }

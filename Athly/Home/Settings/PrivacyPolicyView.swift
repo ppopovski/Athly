@@ -27,7 +27,7 @@ struct PrivacyPolicyView: View {
         }
         .navigationBarHidden(true)
     }
-    
+
     @ViewBuilder
     private var header: some View {
         HStack {
@@ -54,49 +54,53 @@ struct PrivacyPolicyView: View {
         }
         .padding(.top, 10)
     }
-    
+
     @ViewBuilder
     private var content: some View {
         VStack(alignment: .leading, spacing: 20) {
-            section(
+            PrivacyPolicySection(
                 title: "1. Information We Collect",
                 text: "We collect information you provide directly to us, including your name, email address, workout data, and fitness goals. We also collect usage information about how you interact with our app."
             )
 
-            section(
+            PrivacyPolicySection(
                 title: "2. How We Use Your Information",
                 text: "We use the information we collect to provide, maintain, and improve our services, to develop new features, to protect Athly and our users, and to communicate with you."
             )
 
-            section(
+            PrivacyPolicySection(
                 title: "3. Information Sharing",
                 text: "We do not share your personal information with third parties except as described in this privacy policy. We may share your information with service providers who help us operate our business."
             )
 
-            section(
+            PrivacyPolicySection(
                 title: "4. Data Security",
                 text: "We take reasonable measures to help protect your personal information from loss, theft, misuse, unauthorized access, disclosure, alteration, and destruction."
             )
 
-            section(
+            PrivacyPolicySection(
                 title: "5. Your Rights",
                 text: "You have the right to access, update, or delete your personal information at any time. You can do this through your account settings or by contacting us directly."
             )
 
-            section(
+            PrivacyPolicySection(
                 title: "6. Changes to This Policy",
                 text: "We may update this privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page and updating the \"Last updated\" date."
             )
 
-            section(
+            PrivacyPolicySection(
                 title: "7. Contact Us",
                 text: "If you have any questions about this privacy policy, please contact us at privacy@athly.com"
             )
         }
     }
+}
 
-    @ViewBuilder
-    private func section(title: String, text: String) -> some View {
+struct PrivacyPolicySection: View {
+    let title: String
+    let text: String
+
+    var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(title)
                 .font(.system(size: 18, weight: .bold))

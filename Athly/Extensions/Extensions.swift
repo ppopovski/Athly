@@ -34,6 +34,7 @@ struct UserDefaultConstants {
     enum UserDefaultKey: String {
         case authTokens
         case currentUser
+        case userWorkouts
     }
 }
 

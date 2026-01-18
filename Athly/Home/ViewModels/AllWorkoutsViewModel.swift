@@ -7,55 +7,41 @@
 
 import SwiftUI
 
+@MainActor
 @Observable
 class AllWorkoutsViewModel {
     var searchText = ""
     var selectedFilter: WorkoutFilter = .all
+    var allWorkouts: [WorkoutData] = []
     
-    // Mock data - replace with actual data from database/API
-    var allWorkouts: [WorkoutData] = [
-        WorkoutData(
-            title: "Push Day",
-            exercises: "Bench Press, Shoulder Press, Triceps",
-            time: "60 min",
-            isCompleted: false
-        ),
-        WorkoutData(
-            title: "Pull Day",
-            exercises: "Deadlifts, Pull-ups, Rows",
-            time: "55 min",
-            isCompleted: true,
-            date: "Yesterday"
-        ),
-        WorkoutData(
-            title: "Leg Day",
-            exercises: "Squats, Lunges, Leg Press",
-            time: "70 min",
-            isCompleted: true,
-            date: "2 days ago"
-        ),
-        WorkoutData(
-            title: "Cardio & Abs",
-            exercises: "Running, Planks, Crunches",
-            time: "45 min",
-            isCompleted: true,
-            date: "3 days ago"
-        ),
-        WorkoutData(
-            title: "Upper Body",
-            exercises: "Pull-ups, Dips, Rows",
-            time: "50 min",
-            isCompleted: true,
-            date: "4 days ago"
-        ),
-        WorkoutData(
-            title: "Full Body",
-            exercises: "Squats, Bench, Deadlifts",
-            time: "80 min",
-            isCompleted: true,
-            date: "5 days ago"
-        )
-    ]
+    init() {
+        loadWorkouts()
+    }
+    
+    private func getUserId() -> String? {
+        return AuthManager.shared.getUserId()
+    }
+    
+    func loadWorkouts() {
+        allWorkouts = WorkoutStorage.shared.loadWorkouts(userId: getUserId())
+    }
+    
+    var todaysWorkout: WorkoutData? {
+        let today = Date()
+        let calendar = Calendar.current
+        return allWorkouts.first { workout in
+            calendar.isDate(workout.dateCreated, inSameDayAs: today) && !workout.isCompleted
+        }
+    }
+    
+    var recentWorkouts: [WorkoutData] {
+        let today = Date()
+        let calendar = Calendar.current
+        let workoutsExcludingToday = allWorkouts.filter { workout in
+            !calendar.isDate(workout.dateCreated, inSameDayAs: today)
+        }
+        return Array(workoutsExcludingToday.prefix(3))
+    }
     
     var filteredWorkouts: [WorkoutData] {
         let filtered = allWorkouts.filter { workout in
@@ -89,5 +75,22 @@ class AllWorkoutsViewModel {
     
     func addWorkout(_ workout: WorkoutData) {
         allWorkouts.insert(workout, at: 0)
+        WorkoutStorage.shared.addWorkout(workout, userId: getUserId())
+    }
+
+    func updateWorkout(_ workout: WorkoutData) {
+        if let index = allWorkouts.firstIndex(where: { $0.id == workout.id }) {
+            allWorkouts[index] = workout
+            WorkoutStorage.shared.updateWorkout(workout, userId: getUserId())
+        }
+    }
+
+    func deleteWorkout(_ workout: WorkoutData) {
+        allWorkouts.removeAll { $0.id == workout.id }
+        WorkoutStorage.shared.deleteWorkout(workout.id, userId: getUserId())
+    }
+
+    func refreshWorkouts() {
+        loadWorkouts()
     }
 }

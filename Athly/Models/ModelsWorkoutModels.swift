@@ -7,15 +7,43 @@
 
 import Foundation
 
-struct WorkoutData: Identifiable, Hashable {
-    let id = UUID()
+struct WorkoutData: Identifiable, Hashable, Codable {
+    let id: UUID
     let title: String
     let exercises: String
     let time: String
     var isCompleted: Bool = false
-    var date: String? = nil
-    
+    var date: String?
+    var customExercises: [ExerciseData]?
+    let dateCreated: Date
+    var lastModified: Date
+
+    init(
+        id: UUID = UUID(),
+        title: String,
+        exercises: String,
+        time: String,
+        isCompleted: Bool = false,
+        date: String? = nil,
+        customExercises: [ExerciseData]? = nil,
+        dateCreated: Date = Date(),
+        lastModified: Date = Date()
+    ) {
+        self.id = id
+        self.title = title
+        self.exercises = exercises
+        self.time = time
+        self.isCompleted = isCompleted
+        self.date = date
+        self.customExercises = customExercises
+        self.dateCreated = dateCreated
+        self.lastModified = lastModified
+    }
+
     var exerciseList: [ExerciseData] {
+        if let customExercises, !customExercises.isEmpty {
+            return customExercises
+        }
         switch title {
         case "Push Day":
             return [
@@ -43,29 +71,50 @@ struct WorkoutData: Identifiable, Hashable {
             ]
         }
     }
-    
+
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
-    
+
     static func == (lhs: WorkoutData, rhs: WorkoutData) -> Bool {
         lhs.id == rhs.id
     }
 }
 
-struct ExerciseData: Identifiable {
-    let id = UUID()
+extension WorkoutData {
+    var timeMinutes: Int {
+        let components = time.lowercased().components(separatedBy: " ")
+        guard let value = Int(components.first ?? "") else { return 0 }
+        if time.lowercased().contains("hour") || time.lowercased().contains("hr") {
+            return value * 60
+        }
+        return value
+    }
+}
+
+struct ExerciseData: Identifiable, Codable {
+    let id: UUID
     let name: String
     let sets: Int
     let reps: String
     let weight: String
+
+    init(id: UUID = UUID(), name: String, sets: Int, reps: String, weight: String) {
+        self.id = id
+        self.name = name
+        self.sets = sets
+        self.reps = reps
+        self.weight = weight
+    }
 }
 
 struct NewExercise: Identifiable {
     let id = UUID()
     let name: String
     let sets: Int
-    let reps: Int
+    var reps: [Int] // One rep count per set
+    var weights: [Double] // One weight per set
+    var distance: Double?
 }
 
 enum WorkoutCategory: String, CaseIterable {
@@ -98,7 +147,7 @@ enum TimeRange: String, CaseIterable {
     case year = "Year"
 }
 
-struct ChartData {
+struct ChartData: Codable {
     let day: String
     let workouts: Int
 }

@@ -22,7 +22,7 @@ struct WelcomeView: View {
                         .navigationDestination(for: WelcomeScreen.self) { screen in
                             ZStack {
                                 CustomColor.bgBlack.ignoresSafeArea()
-                                viewForScreen(screen)
+                                WelcomeScreenView(screen: screen, forgotPasswordViewModel: forgotPasswordViewModel)
                             }
                             .background(CustomColor.bgBlack)
                         }
@@ -31,7 +31,16 @@ struct WelcomeView: View {
                 }
                 .environment(coordinator)
                 .onChange(of: forgotPasswordViewModel.forgotPasswordState) { _, newValue in
-                    handleForgotPasswordStateChange(newValue)
+                    switch newValue {
+                    case .forgotPassword:
+                        break
+                    case .verificationCode:
+                        coordinator.push(WelcomeScreen.verificationCode)
+                    case .newPassword:
+                        coordinator.push(WelcomeScreen.newPassword)
+                    case .passwordChanged:
+                        coordinator.push(WelcomeScreen.passwordChanged)
+                    }
                 }
             }
             .preferredColorScheme(.dark)
@@ -47,8 +56,13 @@ struct WelcomeView: View {
         }
     }
 
-    @ViewBuilder
-    private func viewForScreen(_ screen: WelcomeScreen) -> some View {
+}
+
+struct WelcomeScreenView: View {
+    let screen: WelcomeScreen
+    let forgotPasswordViewModel: ForgotPasswordViewModel
+
+    var body: some View {
         switch screen {
         case .login:
             LoginView()
@@ -66,20 +80,6 @@ struct WelcomeView: View {
         case .passwordChanged:
             PasswordChangedView()
                 .environment(forgotPasswordViewModel)
-        }
-    }
-
-    private func handleForgotPasswordStateChange(_ state: ForgotPasswordState) {
-        switch state {
-        case .forgotPassword:
-            // Don't navigate - this is handled by LoginView
-            break
-        case .verificationCode:
-            coordinator.push(WelcomeScreen.verificationCode)
-        case .newPassword:
-            coordinator.push(WelcomeScreen.newPassword)
-        case .passwordChanged:
-            coordinator.push(WelcomeScreen.passwordChanged)
         }
     }
 }

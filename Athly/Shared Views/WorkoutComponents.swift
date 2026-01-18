@@ -21,12 +21,16 @@ struct CategoryChip: View {
                 Text(category.rawValue)
                     .font(.system(size: 14, weight: .semibold))
             }
-            .foregroundColor(isSelected ? CustomColor.bgBlack : .white.opacity(0.7))
+            .foregroundColor(isSelected ? CustomColor.bgBlack : CustomColor.primary)
             .padding(.horizontal, 16)
             .padding(.vertical, 10)
             .background(
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(isSelected ? CustomColor.primary : Color.white.opacity(0.1))
+                    .fill(isSelected ? CustomColor.primary : Color.white.opacity(0.04))
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(CustomColor.primary.opacity(isSelected ? 0.0 : 0.5), lineWidth: 1)
             )
         }
     }
@@ -89,9 +93,9 @@ struct AddExerciseSheet: View {
 
                 VStack(spacing: 24) {
                     HStack {
-                        Text("Add Excersise")
+                        Text("Add Exercise")
                             .font(.system(size: 32, weight: .bold))
-                            .foregroundColor(CustomColor.primary)
+                            .foregroundColor(.white)
                         Spacer()
                     }
                     .padding(.top, 10)
@@ -108,7 +112,11 @@ struct AddExerciseSheet: View {
                             .padding(.vertical, 14)
                             .background(
                                 RoundedRectangle(cornerRadius: TextFieldCornerRadius)
-                                    .fill(Color.white.opacity(0.1))
+                                    .fill(Color.white.opacity(0.06))
+                            )
+                            .overlay(
+                                RoundedRectangle(cornerRadius: TextFieldCornerRadius)
+                                    .stroke(CustomColor.primary.opacity(0.4), lineWidth: 1)
                             )
                             .autocorrectionDisabled()
                     }
@@ -127,8 +135,13 @@ struct AddExerciseSheet: View {
                             .padding(12)
                             .background(
                                 RoundedRectangle(cornerRadius: 12)
-                                    .fill(Color.white.opacity(0.05))
+                                    .fill(Color.white.opacity(0.04))
                             )
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .stroke(CustomColor.primary.opacity(0.4), lineWidth: 1)
+                            )
+                            .tint(CustomColor.primary)
                         }
 
                         VStack(alignment: .leading, spacing: 12) {
@@ -144,8 +157,13 @@ struct AddExerciseSheet: View {
                             .padding(12)
                             .background(
                                 RoundedRectangle(cornerRadius: 12)
-                                    .fill(Color.white.opacity(0.05))
+                                    .fill(Color.white.opacity(0.04))
                             )
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .stroke(CustomColor.primary.opacity(0.4), lineWidth: 1)
+                            )
+                            .tint(CustomColor.primary)
                         }
                     }
 
@@ -160,7 +178,9 @@ struct AddExerciseSheet: View {
                             onAdd(NewExercise(
                                 name: exerciseName,
                                 sets: sets,
-                                reps: reps
+                                reps: Array(repeating: reps, count: sets),
+                                weights: Array(repeating: 0.0, count: sets),
+                                distance: nil
                             ))
                             dismiss()
                         }
@@ -182,8 +202,6 @@ struct AddExerciseSheet: View {
     }
 }
 
-// MARK: - Filter Tab
-
 struct FilterTab: View {
     let title: String
     let isSelected: Bool
@@ -193,18 +211,20 @@ struct FilterTab: View {
         Button(action: action) {
             Text(title)
                 .font(.system(size: 14, weight: .semibold))
-                .foregroundColor(isSelected ? CustomColor.bgBlack : .white.opacity(0.7))
+                .foregroundColor(isSelected ? CustomColor.bgBlack : CustomColor.primary)
                 .padding(.horizontal, 20)
                 .padding(.vertical, 8)
                 .background(
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(isSelected ? CustomColor.primary : Color.white.opacity(0.1))
+                        .fill(isSelected ? CustomColor.primary : Color.white.opacity(0.04))
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(CustomColor.primary.opacity(isSelected ? 0.0 : 0.5), lineWidth: 1)
                 )
         }
     }
 }
-
-// MARK: - Exercise Row (for detail view)
 
 struct ExerciseRow: View {
     let exercise: ExerciseData
@@ -260,8 +280,6 @@ struct ExerciseRow: View {
         )
     }
 }
-
-// MARK: - Stat Card (for detail view)
 
 struct StatCard: View {
     let icon: String

@@ -133,7 +133,7 @@ struct CustomTextField: View {
             withAnimation {
                 isEmpty = text.isEmpty
             }
-            countWords()
+            wordsCount = currentWordCount
         }
         .onChange(of: isFocused) {
             withAnimation {
@@ -142,18 +142,16 @@ struct CustomTextField: View {
                 else { error = inputValidator?.isValid(text) }
             }
         }
-        .onAppear { countWords() }
+        .onAppear { wordsCount = currentWordCount }
     }
-    
-    private func countWords() {
-        if wordLimit != nil {
-            let components = text.components(separatedBy: .whitespacesAndNewlines)
-            let words = components.filter { !$0.isEmpty }
-            
-            wordsCount = words.count
-        }
+
+    private var currentWordCount: Int {
+        guard wordLimit != nil else { return 0 }
+        let components = text.components(separatedBy: .whitespacesAndNewlines)
+        let words = components.filter { !$0.isEmpty }
+        return words.count
     }
-    
+
     private var Outline: Color {
         if isFocusedWrapped {
             CustomColor.primary

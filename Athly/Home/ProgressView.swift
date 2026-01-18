@@ -17,13 +17,12 @@ struct ProgressView: View {
             CustomColor.bgBlack.ignoresSafeArea()
 
             ScrollView {
-                VStack(alignment: .leading, spacing: 24) {
+                VStack(alignment: .leading, spacing: 32) {
                     header
                     statsOverview
                     timeRangeSelector
                     workoutChart
                     categoryBreakdown
-                    achievements
 
                     Spacer(minLength: 100)
                 }
@@ -31,6 +30,9 @@ struct ProgressView: View {
             }
         }
         .navigationBarHidden(true)
+        .onAppear {
+            viewModel.loadWorkouts()
+        }
     }
 
     @ViewBuilder
@@ -48,7 +50,7 @@ struct ProgressView: View {
         }
         .padding(.top, 10)
         
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 12) {
             Text("Your Progress")
                 .font(.system(size: 32, weight: .bold))
                 .foregroundColor(CustomColor.primary)
@@ -62,63 +64,58 @@ struct ProgressView: View {
 
     @ViewBuilder
     private var statsOverview: some View {
-        VStack(spacing: 12) {
-            HStack(spacing: 12) {
-                ProgressStatCard(
-                    icon: "figure.strengthtraining.traditional",
-                    title: "Workouts",
-                    value: "\(viewModel.totalWorkouts)",
-                    subtitle: "This month",
-                    color: CustomColor.primary
-                )
-
-                ProgressStatCard(
-                    icon: "flame.fill",
-                    title: "Calories",
-                    value: viewModel.totalCalories,
-                    subtitle: "Total burned",
-                    color: CustomColor.accent
-                )
-            }
-
-            HStack(spacing: 12) {
-                ProgressStatCard(
-                    icon: "clock.fill",
-                    title: "Total Time",
-                    value: viewModel.totalTime,
-                    subtitle: "This month",
-                    color: CustomColor.link
-                )
-
-                ProgressStatCard(
-                    icon: "trophy.fill",
-                    title: "Streak",
-                    value: "\(viewModel.currentStreak)",
-                    subtitle: "Days",
-                    color: CustomColor.success
-                )
-            }
+        let columns = Array(repeating: GridItem(.flexible(), spacing: 12), count: 2)
+        
+        LazyVGrid(columns: columns, spacing: 12) {
+            ProgressStatCard(
+                icon: "figure.strengthtraining.traditional",
+                title: "Workouts",
+                value: "\(viewModel.totalWorkouts)",
+                subtitle: "This month",
+                color: CustomColor.primary
+            )
+            
+            ProgressStatCard(
+                icon: "clock.fill",
+                title: "Total Time",
+                value: viewModel.totalTime,
+                subtitle: "This month",
+                color: CustomColor.link
+            )
+            
+            ProgressStatCard(
+                icon: "trophy.fill",
+                title: "Streak",
+                value: "\(viewModel.currentStreak)",
+                subtitle: "Days",
+                color: CustomColor.success
+            )
         }
     }
 
     @ViewBuilder
     private var timeRangeSelector: some View {
-        HStack(spacing: 12) {
-            ForEach(TimeRange.allCases, id: \.self) { range in
-                TimeRangeTab(
-                    title: range.rawValue,
-                    isSelected: viewModel.selectedTimeRange == range
-                ) {
-                    withAnimation(.spring(response: 0.3)) {
-                        viewModel.changeTimeRange(to: range)
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 12) {
+                ForEach(TimeRange.allCases, id: \.self) { range in
+                    TimeRangeTab(
+                        title: range.rawValue,
+                        isSelected: viewModel.selectedTimeRange == range
+                    ) {
+                        withAnimation(.snappy) {
+                            viewModel.changeTimeRange(to: range)
+                        }
                     }
                 }
             }
+            .padding(.horizontal, 2)
         }
     }
 
     @ViewBuilder
     private var workoutChart: some View {
+        let maxWorkouts = max(viewModel.chartData.map { $0.workouts }.max() ?? 1, 1)
+
         VStack(alignment: .leading, spacing: 16) {
             Text("Workout Frequency")
                 .font(.system(size: 20, weight: .bold))
@@ -130,12 +127,13 @@ struct ProgressView: View {
                         Text(data.day)
                             .font(.system(size: 13, weight: .medium))
                             .foregroundColor(.white.opacity(0.7))
-                            .frame(width: 40, alignment: .leading)
+                            .frame(width: 56, alignment: .leading)
 
                         GeometryReader { geometry in
                             RoundedRectangle(cornerRadius: 4)
                                 .fill(CustomColor.primary)
-                                .frame(width: CGFloat(data.workouts) / 5.0 * geometry.size.width)
+                                .frame(width: CGFloat(data.workouts) / CGFloat(maxWorkouts) * geometry.size.width)
+                                .animation(.snappy, value: data.workouts)
                         }
                         .frame(height: 24)
 
@@ -161,38 +159,41 @@ struct ProgressView: View {
                 .font(.system(size: 20, weight: .bold))
                 .foregroundColor(.white)
 
-            VStack(spacing: 12) {
-                ForEach(viewModel.categoryData, id: \.title) { category in
-                    CategoryProgressBar(
-                        icon: category.icon,
-                        title: category.title,
-                        workouts: category.workouts,
-                        total: category.total,
-                        color: category.color
-                    )
+            if viewModel.categoryData.isEmpty {
+                emptyCategoryState
+            } else {
+                VStack(spacing: 12) {
+                    ForEach(viewModel.categoryData) { category in
+                        CategoryProgressBar(
+                            icon: category.icon,
+                            title: category.title,
+                            workouts: category.workouts,
+                            total: category.total,
+                            color: category.color
+                        )
+                    }
                 }
             }
         }
     }
 
     @ViewBuilder
-    private var achievements: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text("Recent Achievements")
-                .font(.system(size: 20, weight: .bold))
-                .foregroundColor(.white)
+    private var emptyCategoryState: some View {
+        VStack(spacing: 12) {
+            Image(systemName: "square.grid.2x2")
+                .font(.system(size: 28, weight: .semibold))
+                .foregroundColor(.white.opacity(0.3))
 
-            VStack(spacing: 12) {
-                ForEach(viewModel.achievements, id: \.title) { achievement in
-                    AchievementCard(
-                        icon: achievement.icon,
-                        title: achievement.title,
-                        description: achievement.description,
-                        color: achievement.color
-                    )
-                }
-            }
+            Text("No workout types yet")
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundColor(.white.opacity(0.8))
         }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 20)
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color.white.opacity(0.03))
+        )
     }
 }
 

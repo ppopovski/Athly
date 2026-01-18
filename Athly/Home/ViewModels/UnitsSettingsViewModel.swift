@@ -7,32 +7,45 @@
 
 import SwiftUI
 
-enum WeightUnit: String, CaseIterable {
-    case kilograms = "Kilograms (kg)"
-    case pounds = "Pounds (lbs)"
-}
-
-enum DistanceUnit: String, CaseIterable {
-    case kilometers = "Kilometers (km)"
-    case miles = "Miles (mi)"
-}
-
+@MainActor
 @Observable
 class UnitsSettingsViewModel {
-    var weightUnit: WeightUnit = .kilograms
-    var distanceUnit: DistanceUnit = .kilometers
-    
+    var weightUnit: WeightUnit = .kilograms {
+        didSet {
+            saveSettings()
+        }
+    }
+    var distanceUnit: DistanceUnit = .kilometers {
+        didSet {
+            saveSettings()
+        }
+    }
+
+    init() {
+        loadSettings()
+    }
+
     func selectWeightUnit(_ unit: WeightUnit) {
         weightUnit = unit
-        saveSettings()
     }
 
     func selectDistanceUnit(_ unit: DistanceUnit) {
         distanceUnit = unit
-        saveSettings()
     }
 
     private func saveSettings() {
-        // TODO: Save unit settings to UserDefaults or Firebase
+        UserDefaults.standard.set(weightUnit.rawValue, forKey: "weightUnit")
+        UserDefaults.standard.set(distanceUnit.rawValue, forKey: "distanceUnit")
+    }
+
+    private func loadSettings() {
+        if let weightUnitString = UserDefaults.standard.string(forKey: "weightUnit"),
+           let weightUnit = WeightUnit(rawValue: weightUnitString) {
+            self.weightUnit = weightUnit
+        }
+        if let distanceUnitString = UserDefaults.standard.string(forKey: "distanceUnit"),
+           let distanceUnit = DistanceUnit(rawValue: distanceUnitString) {
+            self.distanceUnit = distanceUnit
+        }
     }
 }

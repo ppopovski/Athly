@@ -1,0 +1,104 @@
+# ===============================
+# Xcode
+# ===============================
+.DS_Store
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+
+# Xcode build
+build/
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# ===============================
+# Swift Package Manager
+# ===============================
+.build/
+Packages/
+Package.pins
+Package.resolved
+.swiftpm/
+.swiftpm/xcode/package.xcworkspace
+
+# ===============================
+# CocoaPods
+# ===============================
+Pods/
+Podfile.lock
+
+# ===============================
+# Carthage
+# ===============================
+Carthage/Build/
+
+# ===============================
+# Fastlane
+# ===============================
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# ===============================
+# IDEs & Editors
+# ===============================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===============================
+# Logs & Temp
+# ===============================
+*.log
+*.tmp
+*.temp
+
+# ===============================
+# Secrets & Environment
+# ===============================
+.env
+.env.*
+*.p12
+*.pem
+*.cer
+*.mobileprovision
+
+# ===============================
+# Crash Reports
+# ===============================
+crashlytics-build.properties
+
+# ===============================
+# SwiftLint / SwiftFormat
+# ===============================
+.swiftlint.yml
+.swiftlint.cache
+.swiftformat
+
+# ===============================
+# Tuist
+# ===============================
+.tuist-cache/
+Tuist/.build/
+
+# ===============================
+# Xcode Cloud
+# ===============================
+.xcode-cloud/
+
+# ===============================
+# macOS
+# ===============================
+.Trashes
+.Spotlight-V100
+.AppleDouble
+.LSOverride

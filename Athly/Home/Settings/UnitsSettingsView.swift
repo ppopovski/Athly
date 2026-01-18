@@ -29,7 +29,7 @@ struct UnitsSettingsView: View {
         }
         .navigationBarHidden(true)
     }
-    
+
     @ViewBuilder
     private var header: some View {
         HStack {
@@ -56,7 +56,7 @@ struct UnitsSettingsView: View {
         }
         .padding(.top, 10)
     }
-    
+
     @ViewBuilder
     private var weightSection: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -68,12 +68,13 @@ struct UnitsSettingsView: View {
 
             VStack(spacing: 0) {
                 ForEach(WeightUnit.allCases, id: \.self) { unit in
-                    unitRow(
+                    UnitRow(
                         title: unit.rawValue,
-                        isSelected: viewModel.weightUnit == unit
-                    ) {
-                        viewModel.selectWeightUnit(unit)
-                    }
+                        isSelected: viewModel.weightUnit == unit,
+                        action: {
+                            viewModel.selectWeightUnit(unit)
+                        }
+                    )
 
                     if unit != WeightUnit.allCases.last {
                         Divider().background(Color.white.opacity(0.1))
@@ -86,7 +87,7 @@ struct UnitsSettingsView: View {
             )
         }
     }
-    
+
     @ViewBuilder
     private var distanceSection: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -98,12 +99,13 @@ struct UnitsSettingsView: View {
 
             VStack(spacing: 0) {
                 ForEach(DistanceUnit.allCases, id: \.self) { unit in
-                    unitRow(
+                    UnitRow(
                         title: unit.rawValue,
-                        isSelected: viewModel.distanceUnit == unit
-                    ) {
-                        viewModel.selectDistanceUnit(unit)
-                    }
+                        isSelected: viewModel.distanceUnit == unit,
+                        action: {
+                            viewModel.selectDistanceUnit(unit)
+                        }
+                    )
 
                     if unit != DistanceUnit.allCases.last {
                         Divider().background(Color.white.opacity(0.1))
@@ -116,9 +118,15 @@ struct UnitsSettingsView: View {
             )
         }
     }
-    
-    @ViewBuilder
-    private func unitRow(title: String, isSelected: Bool, action: @escaping () -> Void) -> some View {
+
+}
+
+struct UnitRow: View {
+    let title: String
+    let isSelected: Bool
+    let action: () -> Void
+
+    var body: some View {
         Button(action: action) {
             HStack {
                 Text(title)

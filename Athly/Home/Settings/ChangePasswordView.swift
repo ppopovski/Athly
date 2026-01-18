@@ -30,7 +30,7 @@ struct ChangePasswordView: View {
         }
         .navigationBarHidden(true)
     }
-    
+
     @ViewBuilder
     private var header: some View {
         HStack {
@@ -57,11 +57,11 @@ struct ChangePasswordView: View {
         }
         .padding(.top, 10)
     }
-    
+
     @ViewBuilder
     private var passwordFields: some View {
         @Bindable var viewModel = viewModel
-        
+
         VStack(spacing: 16) {
             VStack(spacing: 12) {
                 HStack {
@@ -124,7 +124,7 @@ struct ChangePasswordView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var passwordRequirements: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -133,8 +133,8 @@ struct ChangePasswordView: View {
                 .foregroundColor(.white.opacity(0.8))
 
             VStack(alignment: .leading, spacing: 8) {
-                requirementRow("At least 8 characters", met: viewModel.meetsLengthRequirement)
-                requirementRow("Passwords match", met: viewModel.passwordsMatch)
+                PasswordRequirementRow(text: "At least 8 characters", met: viewModel.meetsLengthRequirement)
+                PasswordRequirementRow(text: "Passwords match", met: viewModel.passwordsMatch)
             }
         }
         .padding(16)
@@ -144,19 +144,8 @@ struct ChangePasswordView: View {
         )
     }
 
-    @ViewBuilder
-    private func requirementRow(_ text: String, met: Bool) -> some View {
-        HStack(spacing: 8) {
-            Image(systemName: met ? "checkmark.circle.fill" : "circle")
-                .foregroundColor(met ? CustomColor.primary : .white.opacity(0.3))
-                .font(.system(size: 16))
 
-            Text(text)
-                .font(.system(size: 14, weight: .regular))
-                .foregroundColor(met ? .white : .white.opacity(0.6))
-        }
-    }
-    
+
     @ViewBuilder
     private var saveButton: some View {
         CustomButton(
@@ -169,6 +158,23 @@ struct ChangePasswordView: View {
             viewModel.updatePassword {
                 dismiss()
             }
+        }
+    }
+}
+
+struct PasswordRequirementRow: View {
+    let text: String
+    let met: Bool
+
+    var body: some View {
+        HStack(spacing: 8) {
+            Image(systemName: met ? "checkmark.circle.fill" : "circle")
+                .foregroundColor(met ? CustomColor.primary : .white.opacity(0.3))
+                .font(.system(size: 16))
+
+            Text(text)
+                .font(.system(size: 14, weight: .regular))
+                .foregroundColor(met ? .white : .white.opacity(0.6))
         }
     }
 }

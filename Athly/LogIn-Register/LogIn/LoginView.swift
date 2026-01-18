@@ -6,13 +6,12 @@
 //
 
 import SwiftUI
-import AuthenticationServices
 
 struct LoginView: View {
     @Environment(NavigationCoordinator.self) private var coordinator
     @Bindable private var viewModel = LoginViewModel()
     @FocusState private var focused: LoginField?
-    
+
     var body: some View {
         ZStack {
             CustomColor.bgBlack.ignoresSafeArea()
@@ -39,6 +38,25 @@ struct LoginView: View {
             .disabled(viewModel.callInprogress)
         }
         .navigationBarHidden(true)
+        .onAppear {
+            dismissKeyboard()
+            focused = nil
+        }
+        .alert(
+            "Error",
+            isPresented: Binding(
+                get: { viewModel.errorMessage != nil },
+                set: { isPresented in
+                    if !isPresented {
+                        viewModel.errorMessage = nil
+                    }
+                }
+            )
+        ) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(viewModel.errorMessage ?? "")
+        }
     }
 
     @ViewBuilder
@@ -156,7 +174,9 @@ struct LoginView: View {
             buttonType: .primary
         ) {
             dismissKeyboard()
-            login()
+            Task {
+                await viewModel.login()
+            }
         }
     }
 
@@ -190,7 +210,11 @@ struct LoginView: View {
                 contentsColor: .white,
                 buttonType: .primary
             ) {
-                handleAppleSignIn()
+                dismissKeyboard()
+                focused = nil
+                Task {
+                    await viewModel.signInWithApple()
+                }
             }
 
             CustomButton(
@@ -201,7 +225,11 @@ struct LoginView: View {
                 contentsColor: .white,
                 buttonType: .primary
             ) {
-                handleGoogleSignIn()
+                dismissKeyboard()
+                focused = nil
+                Task {
+                    await viewModel.signInWithGoogle()
+                }
             }
         }
         .frame(height: 54)
@@ -223,20 +251,6 @@ struct LoginView: View {
                     .underline()
             }
         }
-    }
-
-    private func login() {
-        Task {
-            await viewModel.login()
-        }
-    }
-
-    private func handleAppleSignIn() {
-        print("Apple Sign In tapped")
-    }
-
-    private func handleGoogleSignIn() {
-        print("Google Sign In tapped")
     }
 }
 

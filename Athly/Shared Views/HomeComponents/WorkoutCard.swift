@@ -13,14 +13,13 @@ struct WorkoutCard: View {
     let time: String
     var isCompleted: Bool = false
     var date: String?
-    var onTap: (() -> Void)? = nil
+    var onTap: (() -> Void)?
 
     var body: some View {
         Button {
             onTap?()
         } label: {
             HStack(spacing: 16) {
-                // Icon
                 ZStack {
                     Circle()
                         .fill(isCompleted ? CustomColor.primary.opacity(0.2) : CustomColor.primary)
@@ -30,8 +29,7 @@ struct WorkoutCard: View {
                         .font(.system(size: 22, weight: .semibold))
                         .foregroundColor(isCompleted ? CustomColor.primary : CustomColor.bgBlack)
                 }
-
-                // Info
+                
                 VStack(alignment: .leading, spacing: 6) {
                     HStack {
                         Text(title)
@@ -62,10 +60,9 @@ struct WorkoutCard: View {
 
                 Spacer()
                 
-                // Chevron indicator
                 Image(systemName: "chevron.right")
                     .font(.system(size: 14, weight: .semibold))
-                    .foregroundColor(.white.opacity(0.3))
+                    .foregroundColor(CustomColor.primary)
             }
             .padding(16)
             .background(
@@ -81,13 +78,13 @@ struct WorkoutCard: View {
     }
 }
 
-// Custom button style for subtle press effect
 struct WorkoutCardButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .scaleEffect(configuration.isPressed ? 0.98 : 1.0)
-            .opacity(configuration.isPressed ? 0.8 : 1.0)
-            .animation(.easeInOut(duration: 0.1), value: configuration.isPressed)
+            .scaleEffect(configuration.isPressed ? 0.97 : 1.0)
+            .opacity(configuration.isPressed ? 0.85 : 1.0)
+            .brightness(configuration.isPressed ? -0.05 : 0)
+            .animation(.easeInOut(duration: 0.12), value: configuration.isPressed)
     }
 }
 

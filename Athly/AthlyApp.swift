@@ -6,6 +6,10 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import GoogleSignIn
+import UIKit
+import UserNotifications
 
 @main
 struct AthlyApp: App {
@@ -20,7 +24,11 @@ struct AthlyApp: App {
 
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+
         UNUserNotificationCenter.current().delegate = self
+        AuthManager.shared.setupAuthStateListener()
+
         return true
     }
     
@@ -52,6 +60,10 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
 //        Task {
 //            try await ApiClient.api.notification.token(input: .init(tokenType: .apns, apnsTokenEnvironment: apnsTokenEnvironment, token: token))
 //        }
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance.handle(url)
     }
 }
 

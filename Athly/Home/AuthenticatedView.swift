@@ -15,7 +15,6 @@ struct AuthenticatedView: View {
     @State private var calendarViewModel = CalendarViewModel()
     @State private var emailSettingsViewModel = EmailSettingsViewModel()
     @State private var changePasswordViewModel = ChangePasswordViewModel()
-    @State private var notificationsSettingsViewModel = NotificationsSettingsViewModel()
     @State private var unitsSettingsViewModel = UnitsSettingsViewModel()
     @State private var addWorkoutViewModel = AddWorkoutViewModel()
     @State private var allWorkoutsViewModel = AllWorkoutsViewModel()
@@ -50,26 +49,37 @@ struct AuthenticatedView: View {
                     }
                 }
                 .navigationDestination(for: HomeScreen.self) { screen in
-                    viewForScreen(screen)
+                    HomeScreenView(screen: screen)
                 }
             }
             .environment(homeViewModel)
             .environment(calendarViewModel)
             .environment(emailSettingsViewModel)
             .environment(changePasswordViewModel)
-            .environment(notificationsSettingsViewModel)
             .environment(unitsSettingsViewModel)
             .environment(addWorkoutViewModel)
             .environment(allWorkoutsViewModel)
             .environment(progressViewModel)
         }
-        .customSheet(isPresented: .constant(!(NetworkMonitor.shared.isConnected ?? true)), config: .init(isInteractiveDismissDisabled: true, horizontalPadding: 16, backgroundColor: .clear, isFloating: true, showDragIndicator: false)) {
+        .customSheet(
+            isPresented: .constant(!(NetworkMonitor.shared.isConnected ?? true)),
+            config: .init(
+                isInteractiveDismissDisabled: true,
+                horizontalPadding: 16,
+                backgroundColor: .clear,
+                isFloating: true,
+                showDragIndicator: false
+            )
+        ) {
             NoInternetView()
         }
     }
+}
 
-    @ViewBuilder
-    private func viewForScreen(_ screen: HomeScreen) -> some View {
+struct HomeScreenView: View {
+    let screen: HomeScreen
+
+    var body: some View {
         switch screen {
         case .settings:
             SettingsView()
@@ -77,8 +87,6 @@ struct AuthenticatedView: View {
             EmailSettingsView()
         case .changePassword:
             ChangePasswordView()
-        case .notificationsSettings:
-            NotificationsSettingsView()
         case .unitsSettings:
             UnitsSettingsView()
         case .about:

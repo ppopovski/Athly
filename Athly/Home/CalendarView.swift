@@ -26,6 +26,9 @@ struct CalendarView: View {
                 .padding(.horizontal, 16)
             }
         }
+        .onAppear {
+            viewModel.loadWorkouts()
+        }
     }
     
     @ViewBuilder
@@ -139,8 +142,6 @@ struct CalendarView: View {
                             time: workout.time,
                             isCompleted: workout.isCompleted
                         ) {
-                            // Navigate to workout detail
-                            // Note: Add navigation coordinator to CalendarView if needed
                         }
                     }
                 }

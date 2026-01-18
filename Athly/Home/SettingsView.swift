@@ -46,14 +46,14 @@ struct SettingsView: View {
     @ViewBuilder
     private var accountSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            sectionTitle("Account")
+            SettingsSectionTitle(title: "Account")
 
             VStack(spacing: 0) {
 
                 SettingsRow(
                     icon: "envelope.fill",
                     title: "Email",
-                    subtitle: "user@example.com"
+                    subtitle: AuthManager.shared.currentUser?.email ?? "Not signed in"
                 ) {
                     navigation.push(HomeScreen.emailSettings)
                 }
@@ -78,19 +78,9 @@ struct SettingsView: View {
     @ViewBuilder
     private var appSettingsSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            sectionTitle("App Settings")
+            SettingsSectionTitle(title: "App Settings")
 
             VStack(spacing: 0) {
-                SettingsRow(
-                    icon: "bell.fill",
-                    title: "Notifications",
-                    subtitle: "Manage your notifications"
-                ) {
-                    navigation.push(HomeScreen.notificationsSettings)
-                }
-
-                Divider().background(Color.white.opacity(0.1))
-
                 SettingsRow(
                     icon: "chart.bar.fill",
                     title: "Units",
@@ -109,7 +99,7 @@ struct SettingsView: View {
     @ViewBuilder
     private var aboutSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            sectionTitle("About")
+            SettingsSectionTitle(title: "About")
 
             VStack(spacing: 0) {
                 SettingsRow(
@@ -158,14 +148,23 @@ struct SettingsView: View {
             borderColor: .red.opacity(0.3),
             buttonType: .primary
         ) {
+            // Dismiss keyboard before logout
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             withAnimation {
-                AuthManager.shared.userState = .loggedOut
+                do {
+                    try AuthManager.shared.signOut()
+                } catch {
+                    print("Error signing out: \(error)")
+                }
             }
         }
     }
-    
-    @ViewBuilder
-    private func sectionTitle(_ title: String) -> some View {
+}
+
+struct SettingsSectionTitle: View {
+    let title: String
+
+    var body: some View {
         Text(title)
             .font(.system(size: 18, weight: .bold))
             .foregroundColor(.white.opacity(0.5))

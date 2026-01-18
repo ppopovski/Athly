@@ -7,20 +7,23 @@
 
 import SwiftUI
 
+@MainActor
 @Observable
 class EmailSettingsViewModel {
-    var currentEmail = "user@example.com"
     var newEmail = ""
     var password = ""
     var isLoading = false
-    
+
+    var currentEmail: String {
+        AuthManager.shared.currentUser?.email ?? "Not signed in"
+    }
+
     var isFormValid: Bool {
         !newEmail.isEmpty && newEmail.contains("@") && !password.isEmpty && newEmail != currentEmail
     }
-    
+
     func updateEmail(onSuccess: @escaping () -> Void) {
         isLoading = true
-        // TODO: Implement email update logic with Firebase
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.isLoading = false
             onSuccess()

@@ -26,7 +26,17 @@ struct CustomTabBar: View {
     var body: some View {
         HStack(spacing: 0) {
             ForEach(tabs) { tab in
-                tabButton(for: tab)
+                TabButton(
+                    tab: tab,
+                    isSelected: selectedTab == tab.id,
+                    indicatorSize: indicatorSize,
+                    tabBarHeight: tabBarHeight,
+                    animation: animation
+                ) {
+                    withAnimation(.snappy) {
+                        selectedTab = tab.id
+                    }
+                }
             }
         }
         .frame(height: tabBarHeight)
@@ -39,15 +49,18 @@ struct CustomTabBar: View {
         .padding(.bottom, 10)
     }
 
-    @ViewBuilder
-    private func tabButton(for tab: TabBarItem) -> some View {
-        let isSelected = selectedTab == tab.id
+}
 
-        Button {
-            withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
-                selectedTab = tab.id
-            }
-        } label: {
+struct TabButton: View {
+    let tab: TabBarItem
+    let isSelected: Bool
+    let indicatorSize: CGFloat
+    let tabBarHeight: CGFloat
+    let animation: Namespace.ID
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
             ZStack {
                 if isSelected {
                     Circle()
@@ -57,7 +70,7 @@ struct CustomTabBar: View {
                         .offset(y: -8)
                         .matchedGeometryEffect(id: "TAB_INDICATOR", in: animation)
                 }
-                
+
                 Image(systemName: tab.icon)
                     .font(.system(size: 22, weight: isSelected ? .semibold : .regular))
                     .foregroundColor(isSelected ? .black : .white.opacity(0.6))
@@ -77,10 +90,8 @@ struct CustomTabBarContainer<Content: View>: View {
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            // Content
             content(selectedTab)
-
-            // Custom Tab Bar
+            
             CustomTabBar(selectedTab: $selectedTab, tabs: tabs)
         }
     }

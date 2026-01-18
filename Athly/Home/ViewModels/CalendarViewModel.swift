@@ -7,10 +7,16 @@
 
 import SwiftUI
 
+@MainActor
 @Observable
 class CalendarViewModel {
     var selectedDate = Date()
     var currentMonth = Date()
+    var workouts: [WorkoutData] = []
+
+    init() {
+        loadWorkouts()
+    }
 
     var monthYearString: String {
         let formatter = DateFormatter()
@@ -25,25 +31,9 @@ class CalendarViewModel {
     }
 
     var selectedDateWorkouts: [WorkoutData] {
-        guard hasWorkout(on: selectedDate) else { return [] }
-
-        // Mock data - replace with actual workout data
-        return [
-            WorkoutData(
-                title: "Push Day",
-                exercises: "Bench Press, Shoulder Press, Triceps",
-                time: "60 min",
-                isCompleted: true
-            ),
-            WorkoutData(
-                title: "Cardio",
-                exercises: "Running, Cycling",
-                time: "30 min",
-                isCompleted: true
-            )
-        ]
+        workouts.filter { Calendar.current.isDate($0.dateCreated, inSameDayAs: selectedDate) }
     }
-    
+
     func changeMonth(by value: Int) {
         if let newMonth = Calendar.current.date(byAdding: .month, value: value, to: currentMonth) {
             currentMonth = newMonth
@@ -81,18 +71,15 @@ class CalendarViewModel {
     }
 
     func hasWorkout(on date: Date) -> Bool {
-        // Mock data - replace with actual workout data
-        let calendar = Calendar.current
-        let today = Date()
-        let yesterday = calendar.date(byAdding: .day, value: -1, to: today) ?? today
-        let twoDaysAgo = calendar.date(byAdding: .day, value: -2, to: today) ?? today
-
-        return calendar.isDate(date, inSameDayAs: today) ||
-               calendar.isDate(date, inSameDayAs: yesterday) ||
-               calendar.isDate(date, inSameDayAs: twoDaysAgo)
+        workouts.contains { Calendar.current.isDate($0.dateCreated, inSameDayAs: date) }
     }
 
     func isSelected(_ date: Date) -> Bool {
         Calendar.current.isDate(date, inSameDayAs: selectedDate)
+    }
+
+    func loadWorkouts() {
+        let userId = AuthManager.shared.getUserId()
+        workouts = WorkoutStorage.shared.loadWorkouts(userId: userId)
     }
 }

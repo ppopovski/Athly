@@ -29,7 +29,7 @@ struct AboutView: View {
         }
         .navigationBarHidden(true)
     }
-    
+
     @ViewBuilder
     private var header: some View {
         HStack {
@@ -61,7 +61,7 @@ struct AboutView: View {
         .frame(maxWidth: .infinity)
         .padding(.top, 10)
     }
-    
+
     @ViewBuilder
     private var appInfo: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -76,7 +76,7 @@ struct AboutView: View {
                 .fill(Color.white.opacity(0.05))
         )
     }
-    
+
     @ViewBuilder
     private var featuresSection: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -87,10 +87,10 @@ struct AboutView: View {
                 .padding(.horizontal, 4)
 
             VStack(alignment: .leading, spacing: 16) {
-                featureRow(icon: "figure.strengthtraining.traditional", text: "Track your workouts")
-                featureRow(icon: "calendar", text: "Schedule and plan")
-                featureRow(icon: "chart.bar.fill", text: "Monitor progress")
-                featureRow(icon: "target", text: "Set and achieve goals")
+                FeatureRow(icon: "figure.strengthtraining.traditional", text: "Track your workouts")
+                FeatureRow(icon: "calendar", text: "Schedule and plan")
+                FeatureRow(icon: "chart.bar.fill", text: "Monitor progress")
+                FeatureRow(icon: "target", text: "Set and achieve goals")
             }
             .padding(16)
             .background(
@@ -100,20 +100,7 @@ struct AboutView: View {
         }
     }
 
-    @ViewBuilder
-    private func featureRow(icon: String, text: String) -> some View {
-        HStack(spacing: 12) {
-            Image(systemName: icon)
-                .font(.system(size: 20, weight: .semibold))
-                .foregroundColor(CustomColor.primary)
-                .frame(width: 32)
 
-            Text(text)
-                .font(.system(size: 16, weight: .regular))
-                .foregroundColor(.white)
-        }
-    }
-    
     @ViewBuilder
     private var contactSection: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -137,6 +124,24 @@ struct AboutView: View {
                 RoundedRectangle(cornerRadius: 16)
                     .fill(Color.white.opacity(0.05))
             )
+        }
+    }
+}
+
+struct FeatureRow: View {
+    let icon: String
+    let text: String
+
+    var body: some View {
+        HStack(spacing: 12) {
+            Image(systemName: icon)
+                .font(.system(size: 20, weight: .semibold))
+                .foregroundColor(CustomColor.primary)
+                .frame(width: 32)
+
+            Text(text)
+                .font(.system(size: 16, weight: .regular))
+                .foregroundColor(.white)
         }
     }
 }

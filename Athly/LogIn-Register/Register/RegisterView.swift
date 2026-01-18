@@ -6,17 +6,11 @@
 //
 
 import SwiftUI
-import AuthenticationServices
 
 struct RegisterView: View {
     @Environment(NavigationCoordinator.self) private var coordinator
     @Bindable private var viewModel = RegisterViewModel()
     @FocusState private var focused: RegisterField?
-
-    @State private var email = ""
-    @State private var confirmEmail = ""
-    @State private var password = ""
-    @State private var confirmPassword = ""
 
     var body: some View {
         ZStack {
@@ -43,6 +37,25 @@ struct RegisterView: View {
             }
         }
         .navigationBarHidden(true)
+        .onAppear {
+            dismissKeyboard()
+            focused = nil
+        }
+        .alert(
+            "Error",
+            isPresented: Binding(
+                get: { viewModel.errorMessage != nil },
+                set: { isPresented in
+                    if !isPresented {
+                        viewModel.errorMessage = nil
+                    }
+                }
+            )
+        ) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(viewModel.errorMessage ?? "")
+        }
     }
 
     @ViewBuilder
@@ -82,46 +95,60 @@ struct RegisterView: View {
     @ViewBuilder
     private var formFields: some View {
         VStack(spacing: 25) {
-            fieldSection(
-                label: "Email Address",
-                placeholder: "Enter Your Email",
-                text: $email,
-                field: .email,
-                keyboardType: .emailAddress,
-                contentType: .emailAddress,
-                submitLabel: .next
+            RegisterFieldSection(
+                config: .init(
+                    label: "Email Address",
+                    placeholder: "Enter Your Email",
+                    field: .email,
+                    isSecure: false,
+                    keyboardType: .emailAddress,
+                    contentType: .emailAddress,
+                    submitLabel: .next
+                ),
+                text: $viewModel.email,
+                focus: $focused
             )
 
-            fieldSection(
-                label: "Confirm Email",
-                placeholder: "Confirm Your Email",
-                text: $confirmEmail,
-                field: .confirmEmail,
-                keyboardType: .emailAddress,
-                contentType: .emailAddress,
-                submitLabel: .next
+            RegisterFieldSection(
+                config: .init(
+                    label: "Confirm Email",
+                    placeholder: "Confirm Your Email",
+                    field: .confirmEmail,
+                    isSecure: false,
+                    keyboardType: .emailAddress,
+                    contentType: .emailAddress,
+                    submitLabel: .next
+                ),
+                text: $viewModel.confirmEmail,
+                focus: $focused
             )
 
-            fieldSection(
-                label: "Password",
-                placeholder: "Enter Your Password",
-                text: $password,
-                field: .password,
-                isSecure: true,
-                keyboardType: .asciiCapable,
-                contentType: .newPassword,
-                submitLabel: .next
+            RegisterFieldSection(
+                config: .init(
+                    label: "Password",
+                    placeholder: "Enter Your Password",
+                    field: .password,
+                    isSecure: true,
+                    keyboardType: .asciiCapable,
+                    contentType: .newPassword,
+                    submitLabel: .next
+                ),
+                text: $viewModel.password,
+                focus: $focused
             )
 
-            fieldSection(
-                label: "Confirm Password",
-                placeholder: "Confirm Your Password",
-                text: $confirmPassword,
-                field: .confirmPassword,
-                isSecure: true,
-                keyboardType: .asciiCapable,
-                contentType: .newPassword,
-                submitLabel: .done
+            RegisterFieldSection(
+                config: .init(
+                    label: "Confirm Password",
+                    placeholder: "Confirm Your Password",
+                    field: .confirmPassword,
+                    isSecure: true,
+                    keyboardType: .asciiCapable,
+                    contentType: .newPassword,
+                    submitLabel: .done
+                ),
+                text: $viewModel.confirmPassword,
+                focus: $focused
             )
         }
         .textInputAutocapitalization(.never)
@@ -129,51 +156,17 @@ struct RegisterView: View {
     }
 
     @ViewBuilder
-    private func fieldSection(
-        label: String,
-        placeholder: String,
-        text: Binding<String>,
-        field: RegisterField,
-        isSecure: Bool = false,
-        keyboardType: UIKeyboardType,
-        contentType: UITextContentType,
-        submitLabel: SubmitLabel
-    ) -> some View {
-        VStack(spacing: 12) {
-            HStack {
-                Text(label)
-                    .font(.system(size: 12, weight: .bold, design: .default))
-                    .foregroundColor(CustomColor.primary)
-                Spacer()
-            }
-
-            CustomTextField(
-                title: placeholder,
-                text: text,
-                isSecure: isSecure,
-                cornerRadius: 25,
-                descriptionText: false,
-                placeholderColor: .white.opacity(0.5),
-                backgroundColor: CustomColor.bgBlack,
-                textColor: .white
-            )
-            .focused($focused, equals: field)
-            .keyboardType(keyboardType)
-            .textContentType(contentType)
-            .submitLabel(submitLabel)
-        }
-    }
-
-    @ViewBuilder
     private var signUpButton: some View {
         CustomButton(
             buttonText: "Sign Up",
             cornerRadius: ButtonCornerRadius,
-            disabled: !isFormValid,
+            disabled: !viewModel.allDataEnteredCorrectly,
             buttonType: .primary
         ) {
             dismissKeyboard()
-            register()
+            Task {
+                await viewModel.register()
+            }
         }
         .padding(.top, 10)
     }
@@ -208,7 +201,11 @@ struct RegisterView: View {
                 contentsColor: .white,
                 buttonType: .primary
             ) {
-                handleAppleSignIn()
+                dismissKeyboard()
+                focused = nil
+                Task {
+                    await viewModel.signInWithApple()
+                }
             }
 
             CustomButton(
@@ -219,7 +216,11 @@ struct RegisterView: View {
                 contentsColor: .white,
                 buttonType: .primary
             ) {
-                handleGoogleSignIn()
+                dismissKeyboard()
+                focused = nil
+                Task {
+                    await viewModel.signInWithGoogle()
+                }
             }
             .frame(height: 54)
         }
@@ -245,30 +246,7 @@ struct RegisterView: View {
         .padding(.top, 10)
     }
 
-    private var isFormValid: Bool {
-        !email.isEmpty &&
-        !confirmEmail.isEmpty &&
-        !password.isEmpty &&
-        !confirmPassword.isEmpty &&
-        email == confirmEmail &&
-        password == confirmPassword &&
-        email.contains("@") &&
-        password.count >= 6
-    }
 
-    private func register() {
-        Task {
-            await viewModel.register(email: email, password: password)
-        }
-    }
-
-    private func handleAppleSignIn() {
-        print("Apple Sign In tapped")
-    }
-
-    private func handleGoogleSignIn() {
-        print("Google Sign In tapped")
-    }
 }
 
 #Preview {
@@ -278,11 +256,51 @@ struct RegisterView: View {
     }
 }
 
-extension RegisterView {
-    enum RegisterField {
-        case email
-        case confirmEmail
-        case password
-        case confirmPassword
+enum RegisterField {
+    case email
+    case confirmEmail
+    case password
+    case confirmPassword
+}
+
+struct RegisterFieldSection: View {
+    let config: RegisterFieldConfig
+    @Binding var text: String
+    let focus: FocusState<RegisterField?>.Binding
+
+    var body: some View {
+        VStack(spacing: 12) {
+            HStack {
+                Text(config.label)
+                    .font(.system(size: 12, weight: .bold, design: .default))
+                    .foregroundColor(CustomColor.primary)
+                Spacer()
+            }
+
+            CustomTextField(
+                title: config.placeholder,
+                text: $text,
+                isSecure: config.isSecure,
+                cornerRadius: 25,
+                descriptionText: false,
+                placeholderColor: .white.opacity(0.5),
+                backgroundColor: CustomColor.bgBlack,
+                textColor: .white
+            )
+            .focused(focus, equals: config.field)
+            .keyboardType(config.keyboardType)
+            .textContentType(config.contentType)
+            .submitLabel(config.submitLabel)
+        }
     }
+}
+
+struct RegisterFieldConfig {
+    let label: String
+    let placeholder: String
+    let field: RegisterField
+    let isSecure: Bool
+    let keyboardType: UIKeyboardType
+    let contentType: UITextContentType
+    let submitLabel: SubmitLabel
 }

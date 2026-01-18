@@ -62,12 +62,16 @@ struct TimeRangeTab: View {
         Button(action: action) {
             Text(title)
                 .font(.system(size: 14, weight: .semibold))
-                .foregroundColor(isSelected ? CustomColor.bgBlack : .white.opacity(0.7))
+                .foregroundColor(isSelected ? CustomColor.bgBlack : CustomColor.primary)
                 .padding(.horizontal, 20)
                 .padding(.vertical, 8)
                 .background(
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(isSelected ? CustomColor.primary : Color.white.opacity(0.1))
+                        .fill(isSelected ? CustomColor.primary : Color.white.opacity(0.04))
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(CustomColor.primary.opacity(isSelected ? 0.0 : 0.5), lineWidth: 1)
                 )
         }
     }
@@ -114,6 +118,7 @@ struct CategoryProgressBar: View {
                     RoundedRectangle(cornerRadius: 4)
                         .fill(color)
                         .frame(width: geometry.size.width * percentage)
+                        .animation(.snappy, value: percentage)
                 }
             }
             .frame(height: 8)
